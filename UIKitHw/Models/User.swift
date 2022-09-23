@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Model.
+/// Model with verify correct data.
 class User {
   func registration(email: String?, password: String?) -> Bool {
     guard let userEmail = email else { return false }

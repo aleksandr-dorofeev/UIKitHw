@@ -33,6 +33,5 @@ class ReservationViewController: UIViewController {
     confirmAlert.addAction(issueCheckAction)
     confirmAlert.addAction(cancelAction)
     present(confirmAlert, animated: true)
-    
   }
 }

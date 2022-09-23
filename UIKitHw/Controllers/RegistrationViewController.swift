@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Registration controller.
+/// Registration screen.
 class RegistrationViewController: UIViewController {
   
   // MARK: - Outlets.
