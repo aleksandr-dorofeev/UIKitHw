@@ -25,7 +25,7 @@ class HelloViewController: UIViewController {
   }()
   
   // MARK: - Model.
-  var model = Model()
+  var model = Name()
   
   // MARK: - ViewDidLoad.
   override func viewDidLoad() {

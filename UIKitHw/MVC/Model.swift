@@ -8,7 +8,7 @@
 import UIKit
 
 /// Model.
-class Model {
+class Name {
   
   // MARK: - Correct name.
   func correctName(vc: UIViewController, resultLabel: UILabel) {
