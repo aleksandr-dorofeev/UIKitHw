@@ -7,7 +7,7 @@
 
 import UIKit
 
-// Controller.
+// Screen with Addition numbers and game with guess number.
 class ViewController: UIViewController {
   
   // MARK: - Constants.
@@ -51,6 +51,11 @@ class ViewController: UIViewController {
   // MARK: - ViewDidLoad.
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupViews()
+  }
+  
+  //
+  private func setupViews() {
     createHelloLabel()
     createSumLabel()
     createGuessLabel()
