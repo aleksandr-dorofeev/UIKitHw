@@ -7,19 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8178EB128E06E7D00954BC9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8178EB028E06E7D00954BC9 /* PlayerViewController.swift */; };
+		F8178EB528E07C7500954BC9 /* After Dark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8178EB428E07C7500954BC9 /* After Dark.mp3 */; };
+		F8178EB728E07C7F00954BC9 /* Smoke Machine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8178EB628E07C7F00954BC9 /* Smoke Machine.mp3 */; };
+		F8178EBA28E08D3700954BC9 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8178EB928E08D3700954BC9 /* Song.swift */; };
+		F8178EBC28E0913400954BC9 /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8178EBB28E0913400954BC9 /* Songs.swift */; };
+		F8178EBE28E091D800954BC9 /* CurrentSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8178EBD28E091D800954BC9 /* CurrentSong.swift */; };
 		F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E428DC7234008BFEBC /* AppDelegate.swift */; };
 		F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */; };
-		F8BE19E928DC7234008BFEBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E828DC7234008BFEBC /* ViewController.swift */; };
+		F8BE19E928DC7234008BFEBC /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E828DC7234008BFEBC /* MusicListViewController.swift */; };
 		F8BE19EC28DC7234008BFEBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8BE19EA28DC7234008BFEBC /* Main.storyboard */; };
 		F8BE19EE28DC7236008BFEBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8BE19ED28DC7236008BFEBC /* Assets.xcassets */; };
 		F8BE19F128DC7236008BFEBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8BE19EF28DC7236008BFEBC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8178EB028E06E7D00954BC9 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		F8178EB428E07C7500954BC9 /* After Dark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "After Dark.mp3"; path = "../../../../../../../Downloads/After Dark.mp3"; sourceTree = "<group>"; };
+		F8178EB628E07C7F00954BC9 /* Smoke Machine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Smoke Machine.mp3"; path = "../../../../../../../Downloads/Smoke Machine.mp3"; sourceTree = "<group>"; };
+		F8178EB928E08D3700954BC9 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		F8178EBB28E0913400954BC9 /* Songs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Songs.swift; sourceTree = "<group>"; };
+		F8178EBD28E091D800954BC9 /* CurrentSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSong.swift; sourceTree = "<group>"; };
 		F8BE19E128DC7234008BFEBC /* UIKitHw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE19E428DC7234008BFEBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F8BE19E828DC7234008BFEBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8BE19E828DC7234008BFEBC /* MusicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		F8BE19EB28DC7234008BFEBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8BE19ED28DC7236008BFEBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8BE19F028DC7236008BFEBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +49,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8178EB228E07C4C00954BC9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE19E828DC7234008BFEBC /* MusicListViewController.swift */,
+				F8178EB028E06E7D00954BC9 /* PlayerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F8178EB328E07C6800954BC9 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				F8178EB628E07C7F00954BC9 /* Smoke Machine.mp3 */,
+				F8178EB428E07C7500954BC9 /* After Dark.mp3 */,
+				F8178EB928E08D3700954BC9 /* Song.swift */,
+				F8178EBB28E0913400954BC9 /* Songs.swift */,
+				F8178EBD28E091D800954BC9 /* CurrentSong.swift */,
+			);
+			path = Songs;
+			sourceTree = "<group>";
+		};
 		F8BE19D828DC7234008BFEBC = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +91,8 @@
 			children = (
 				F8BE19E428DC7234008BFEBC /* AppDelegate.swift */,
 				F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */,
-				F8BE19E828DC7234008BFEBC /* ViewController.swift */,
+				F8178EB328E07C6800954BC9 /* Songs */,
+				F8178EB228E07C4C00954BC9 /* Controllers */,
 				F8BE19EA28DC7234008BFEBC /* Main.storyboard */,
 				F8BE19ED28DC7236008BFEBC /* Assets.xcassets */,
 				F8BE19EF28DC7236008BFEBC /* LaunchScreen.storyboard */,
@@ -129,6 +163,8 @@
 				F8BE19F128DC7236008BFEBC /* LaunchScreen.storyboard in Resources */,
 				F8BE19EE28DC7236008BFEBC /* Assets.xcassets in Resources */,
 				F8BE19EC28DC7234008BFEBC /* Main.storyboard in Resources */,
+				F8178EB528E07C7500954BC9 /* After Dark.mp3 in Resources */,
+				F8178EB728E07C7F00954BC9 /* Smoke Machine.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +197,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8BE19E928DC7234008BFEBC /* ViewController.swift in Sources */,
+				F8178EBC28E0913400954BC9 /* Songs.swift in Sources */,
+				F8178EBA28E08D3700954BC9 /* Song.swift in Sources */,
+				F8BE19E928DC7234008BFEBC /* MusicListViewController.swift in Sources */,
+				F8178EB128E06E7D00954BC9 /* PlayerViewController.swift in Sources */,
+				F8178EBE28E091D800954BC9 /* CurrentSong.swift in Sources */,
 				F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */,
 				F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */,
 			);
