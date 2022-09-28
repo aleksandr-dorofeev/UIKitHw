@@ -30,7 +30,7 @@ class HomeWorkViewController: UIViewController {
   }
   
   // MARK: - Actions.
-  @IBAction func shareButton(_ sender: Any) {
+  @IBAction func shareButtonAction(_ sender: Any) {
     let text = shareTextFIeld.text
     
     if (text?.isEmpty) == true {
@@ -50,8 +50,12 @@ class HomeWorkViewController: UIViewController {
   }
   
   @IBAction func shareToFacebookAction(_ sender: Any) {
-    guard let shareText = shareToFacebook.text else { return }
-    guard let urlText = URL(string: shareText) else { return }
+    guard
+      let shareText = shareToFacebook.text,
+      let urlText = URL(string: shareText)
+    else {
+      return
+    }
     activityController = UIActivityViewController(activityItems: [urlText],
                                                   applicationActivities: nil)
     guard let activity = activityController else { return }
@@ -59,8 +63,12 @@ class HomeWorkViewController: UIViewController {
   }
   
   @IBAction func shareImageAction(_ sender: Any) {
-    guard let imageItem = chelseaImage.image else { return }
-    guard let messageItem = shareMessageWithImage.text else { return }
+    guard
+      let imageItem = chelseaImage.image,
+      let messageItem = shareMessageWithImage.text
+    else {
+      return
+    }
     activityController = UIActivityViewController(activityItems: [imageItem, messageItem],
                                                   applicationActivities: nil)
     guard let activity = activityController else { return }
@@ -68,6 +76,7 @@ class HomeWorkViewController: UIViewController {
   }
 }
 
+/// UIPickerViewDelegate.
 extension HomeWorkViewController: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     return cities[row]
@@ -82,6 +91,7 @@ extension HomeWorkViewController: UIPickerViewDelegate {
   }
 }
 
+/// UIPickerViewDataSource.
 extension HomeWorkViewController: UIPickerViewDataSource {
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
