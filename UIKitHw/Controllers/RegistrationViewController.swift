@@ -121,7 +121,6 @@ class RegistrationViewController: UIViewController {
     faceIdSwitch.frame = CGRect(x: 320, y: 520, width: 0, height: 0)
     faceIdSwitch.isOn = true
     faceIdSwitch.setOn(true, animated: false)
-//    faceIdSwitch.addTarget(self, action: #selector(), for: .valueChanged)
     view.addSubview(faceIdSwitch)
   }
   
@@ -150,15 +149,14 @@ class RegistrationViewController: UIViewController {
   // MARK: - Actions.
   @objc func pushBirthdayListScreenAction() {
     let user = User()
-    if user.registration(email: self.emailTextField.text, password: self.passwordTextField.text) {
+    guard user.registration(email: self.emailTextField.text, password: self.passwordTextField.text) else {
+      return errorAlert(title: "Вы ввели некорректные данные!",
+                        message: "Пожалуйста, проверьте почту и пароль.",
+                        style: .alert)
+    }
       let birthdayListVc = BirthdayListViewController()
       birthdayListVc.title = "Birthday"
       self.navigationController?.pushViewController(birthdayListVc, animated: true)
-    } else {
-      errorAlert(title: "Вы ввели некорректные данные!",
-                 message: "Пожалуйста, проверьте почту и пароль.",
-                 style: .alert)
-    }
   }
   
   // MARK: - Error alert.
@@ -166,8 +164,8 @@ class RegistrationViewController: UIViewController {
     let alert = UIAlertController(title: title,
                                   message: message,
                                   preferredStyle: style)
-    let action = UIAlertAction(title: "Ok", style: .default)
-    alert.addAction(action)
+    let actionAction = UIAlertAction(title: "Ok", style: .default)
+    alert.addAction(actionAction)
     present(alert, animated: true)
   }
 }

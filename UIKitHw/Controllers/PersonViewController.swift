@@ -156,7 +156,7 @@ class PersonViewController: UIViewController {
     dateTextField.autocorrectionType = .no
     dateTextField.keyboardType = .default
     dateTextField.contentVerticalAlignment = .center
-    dateTextField.addTarget(self, action: #selector(createDatePicker), for: .touchDown)
+    dateTextField.addTarget(self, action: #selector(createDatePickerAction), for: .touchDown)
     view.addSubview(dateTextField)
   }
   
@@ -168,7 +168,7 @@ class PersonViewController: UIViewController {
     ageTextField.autocorrectionType = .no
     ageTextField.keyboardType = .default
     ageTextField.contentVerticalAlignment = .center
-    ageTextField.addTarget(self, action: #selector(createPicker), for: .touchDown)
+    ageTextField.addTarget(self, action: #selector(createPickerAction), for: .touchDown)
     view.addSubview(ageTextField)
   }
   
@@ -180,7 +180,7 @@ class PersonViewController: UIViewController {
     genderTextField.autocorrectionType = .no
     genderTextField.keyboardType = .default
     genderTextField.contentVerticalAlignment = .center
-    genderTextField.addTarget(self, action: #selector(createPicker), for: .touchDown)
+    genderTextField.addTarget(self, action: #selector(createPickerAction), for: .touchDown)
     view.addSubview(genderTextField)
   }
   
@@ -221,10 +221,10 @@ class PersonViewController: UIViewController {
   }
   
   @objc func cancelDateAction() {
-    self.view.endEditing(true)
+    view.endEditing(true)
   }
   
-  @objc func createPicker() {
+  @objc func createPickerAction() {
     let toolBar = UIToolbar()
     toolBar.sizeToFit()
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pickerAction))
@@ -237,11 +237,11 @@ class PersonViewController: UIViewController {
     genderTextField.inputAccessoryView = toolBar
   }
   
-  @objc func dateChange(datePicker: UIDatePicker) {
+  @objc func dateChangeAction(datePicker: UIDatePicker) {
     dateTextField.text = formatDate(date: datePicker.date)
   }
   
-  @objc func createDatePicker() {
+  @objc func createDatePickerAction() {
     datePicker.datePickerMode = .dateAndTime
     let toolBar = UIToolbar()
     toolBar.sizeToFit()
@@ -252,7 +252,7 @@ class PersonViewController: UIViewController {
                                        target: self,
                                        action: #selector(cancelDateAction))
     toolBar.setItems([spaceButton, cancelButton], animated: true)
-    datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: .valueChanged)
+    datePicker.addTarget(self, action: #selector(dateChangeAction(datePicker:)), for: .valueChanged)
     datePicker.frame.size = CGSize(width: 0, height: 300)
     datePicker.preferredDatePickerStyle = .wheels
     dateTextField.inputAccessoryView = toolBar

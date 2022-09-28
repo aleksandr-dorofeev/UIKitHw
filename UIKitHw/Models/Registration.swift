@@ -10,8 +10,7 @@ import Foundation
 /// Logic for registration screen.
 class User {
    func registration(email: String?, password: String?) -> Bool {
-     guard let userEmail = email else { return false }
-     guard let userPassword = password else { return false }
+     guard let userEmail = email, let userPassword = password  else { return false }
      if userEmail.contains("@") && userEmail.contains("mail") && userPassword.count >= 5 {
        return true
      }

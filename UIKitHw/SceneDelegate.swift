@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = scene as? UIWindowScene else { return }
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.windowScene = windowScene
-    let authVc = RegistrationViewController()
-    let navigationController = UINavigationController(rootViewController: authVc)
+    let authVC = RegistrationViewController()
+    let navigationController = UINavigationController(rootViewController: authVC)
     
     if let window = window {
       window.rootViewController = navigationController
