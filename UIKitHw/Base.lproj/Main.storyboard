@@ -32,7 +32,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Поделиться"/>
                                 <connections>
-                                    <action selector="shareToFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q9k-l9-ExO"/>
+                                    <action selector="shareToFacebookAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="geb-Jx-zax"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите текст..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irz-Fm-8wj">
@@ -78,7 +78,7 @@
                                 </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVS-x0-pLx">
-                                <rect key="frame" x="0.0" y="654" width="390" height="162"/>
+                                <rect key="frame" x="-1" y="654" width="390" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="qtP-hU-9gF"/>
