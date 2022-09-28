@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Контроллер.
+/// Screen with product description..
 class ProductViewController: UIViewController {
   
   // MARK: - Lazy properties.
@@ -60,6 +60,61 @@ class ProductViewController: UIViewController {
     createProductAmountTextField()
     createAddBagButton()
     createBarButtonBag()
+  }
+  
+  // MARK: - Actions.
+  @objc func createSizeAndAmountPickerAction() {
+    let toolBar = UIToolbar()
+    toolBar.sizeToFit()
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pickerAction))
+    toolBar.setItems([doneButton], animated: true)
+    setUpDelegateAndDataSourceForPickers()
+    setupIndexesForPickers()
+    productAmountTextField.inputView = amountPicker
+    productSizeTextField.inputView = sizePicker
+    productAmountTextField.inputAccessoryView = toolBar
+    productSizeTextField.inputAccessoryView = toolBar
+  }
+  
+  @objc func pickerAction() {
+    view.endEditing(true)
+  }
+  
+  @objc func selectedValueAction(target: UISegmentedControl) {
+    if target == productColorSegmentControl {
+      let segmentIndex = target.selectedSegmentIndex
+      productImageView.image = images[segmentIndex]
+    }
+  }
+  
+  @objc func barButtonBagAction() {
+    guard productCount == false else {
+      let bagVc = BagViewController()
+      guard let selectColor = productColorSegmentControl.titleForSegment(
+        at: productColorSegmentControl.selectedSegmentIndex) else { return }
+      bagVc.addedProductNameLabel.text = productNameLabel.text
+      bagVc.addedProductCostValueLabel.text = productCostValueLabel.text
+      bagVc.addedProductImageView.image = productImageView.image
+      bagVc.addedProductSizeValueLabel.text = productSizeTextField.text
+      bagVc.addedProductColorValueLabel.text = selectColor
+      if productDeliveryStateSwitch.isOn {
+        bagVc.wayToGetValueLabel.text = "Доставка"
+      } else {
+        bagVc.wayToGetValueLabel.text = "Самовывоз"
+      }
+      bagVc.addedProductAmountValueLabel.text = productAmountTextField.text
+      guard let amountInt = Int(productAmountTextField.text ?? "") else { return }
+      guard let costInt = Int(productCostValueLabel.text ?? "") else { return }
+      bagVc.generalCostValueLabel.text = "\(amountInt * costInt) рублей"
+      navigationController?.pushViewController(bagVc, animated: true)
+      return }
+    errorAlert(title: "Ой",
+               message: "Пока вы еще ничего не добавили в корзину.",
+               style: .alert)
+  }
+  
+  @objc func addButtonAction() {
+    productCount = true
   }
   
   // MARK: - Create Subviews.
@@ -126,7 +181,8 @@ class ProductViewController: UIViewController {
   private func createProductImageView() {
     productImageView.frame = CGRect(x: 16, y: 47, width: 358, height: 336)
     productImageView.contentMode = .scaleAspectFit
-    productImageView.image = images[0]
+    guard let image = images.first else { return }
+    productImageView.image = image
     view.addSubview(productImageView)
   }
   
@@ -171,61 +227,5 @@ class ProductViewController: UIViewController {
     amountPicker.delegate = self
     sizePicker.dataSource = self
     sizePicker.delegate = self
-  }
-  
-  // MARK: - Actions.
-  @objc func createSizeAndAmountPickerAction() {
-    let toolBar = UIToolbar()
-    toolBar.sizeToFit()
-    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pickerAction))
-    toolBar.setItems([doneButton], animated: true)
-    setUpDelegateAndDataSourceForPickers()
-    setupIndexesForPickers()
-    productAmountTextField.inputView = amountPicker
-    productSizeTextField.inputView = sizePicker
-    productAmountTextField.inputAccessoryView = toolBar
-    productSizeTextField.inputAccessoryView = toolBar
-  }
-  
-  @objc func pickerAction() {
-    view.endEditing(true)
-  }
-  
-  @objc func selectedValueAction(target: UISegmentedControl) {
-    if target == productColorSegmentControl {
-      let segmentIndex = target.selectedSegmentIndex
-      productImageView.image = images[segmentIndex]
-    }
-  }
-  
-  @objc func barButtonBagAction() {
-    if productCount == false {
-      errorAlert(title: "Ой",
-                 message: "Пока вы еще ничего не добавили в корзину.",
-                 style: .alert)
-    } else {
-      let bagVc = BagViewController()
-      guard let selectColor = productColorSegmentControl.titleForSegment(
-        at: productColorSegmentControl.selectedSegmentIndex) else { return }
-      bagVc.addedProductNameLabel.text = productNameLabel.text
-      bagVc.addedProductCostValueLabel.text = productCostValueLabel.text
-      bagVc.addedProductImageView.image = productImageView.image
-      bagVc.addedProductSizeValueLabel.text = productSizeTextField.text
-      bagVc.addedProductColorValueLabel.text = selectColor
-      if productDeliveryStateSwitch.isOn {
-        bagVc.wayToGetValueLabel.text = "Доставка"
-      } else {
-        bagVc.wayToGetValueLabel.text = "Самовывоз"
-      }
-      bagVc.addedProductAmountValue.text = productAmountTextField.text
-      guard let amountInt = Int(productAmountTextField.text ?? "") else { return }
-      guard let costInt = Int(productCostValueLabel.text ?? "") else { return }
-      bagVc.generalCostValueLabel.text = "\(amountInt * costInt) рублей"
-      navigationController?.pushViewController(bagVc, animated: true)
-    }
-  }
-  
-  @objc func addButtonAction() {
-    productCount = true
   }
 }

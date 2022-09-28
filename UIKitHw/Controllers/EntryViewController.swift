@@ -39,7 +39,7 @@ class EntryViewController: UIViewController {
     createFaceIdLabel()
     createShowPasswordButton()
     createFaceIdSwitch()
-    createComeInButton()
+    createLoginButton()
   }
   
   // MARK: - Create Subviews.
@@ -127,7 +127,7 @@ class EntryViewController: UIViewController {
     showPasswordButton.addTarget(self, action: #selector(showPasswordAction), for: .touchUpInside)
   }
   
-  private func createComeInButton() {
+  private func createLoginButton() {
     comeInButton.frame = CGRect(x: 220, y: 650, width: 350, height: 50)
     comeInButton.center.x = view.center.x
     comeInButton.layer.cornerRadius = 6
@@ -138,24 +138,24 @@ class EntryViewController: UIViewController {
     view.addSubview(comeInButton)
   }
   
+  // MARK: - Actions.
   @objc func showPasswordAction() {
     let togglePassword = passwordTextField.isSecureTextEntry
     passwordTextField.isSecureTextEntry = togglePassword ? false : true
   }
   
-  // MARK: - Actions.
   @objc func pushProductScreenAction() {
     let user = User()
     if user.registration(email: self.emailTextField.text, password: self.passwordTextField.text) {
-    let productVc = ProductViewController()
-    productVc.title = "New Balance"
-    self.navigationController?.pushViewController(productVc, animated: true)
-  } else {
-    errorAlert(title: "Вы ввели некорректные данные!",
-               message: "Пожалуйста, проверьте почту и пароль.",
-               style: .alert)
+      let productVc = ProductViewController()
+      productVc.title = "New Balance"
+      self.navigationController?.pushViewController(productVc, animated: true)
+    } else {
+      errorAlert(title: "Вы ввели некорректные данные!",
+                 message: "Пожалуйста, проверьте почту и пароль.",
+                 style: .alert)
+    }
   }
-}
   
   // MARK: - Error alert.
   private func errorAlert(title: String, message: String, style: UIAlertController.Style) {

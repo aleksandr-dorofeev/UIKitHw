@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Extension for size and amount pickers delegate.
+/// UIPickerViewDelegate.
 extension ProductViewController: UIPickerViewDelegate {
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Extension for size and amount pickers data source.
+/// UIPickerViewDataSource.
 extension ProductViewController: UIPickerViewDataSource {
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {

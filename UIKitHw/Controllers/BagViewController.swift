@@ -14,7 +14,7 @@ class BagViewController: UIViewController {
   lazy var addedProductImageView = UIImageView()
   lazy var addedProductNameLabel = UILabel()
   lazy var addedProductAmountLabel = UILabel()
-  lazy var addedProductAmountValue = UILabel()
+  lazy var addedProductAmountValueLabel = UILabel()
   lazy var addedProductSizeLabel = UILabel()
   lazy var addedProductSizeValueLabel = UILabel()
   lazy var addedProductColorLabel = UILabel()
@@ -29,10 +29,10 @@ class BagViewController: UIViewController {
   lazy var byeButton = UIButton()
   
   // MARK: - viewDidLoad.
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      setupSubviews()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupSubviews()
+  }
   
   // MARK: - Setup Subviews.
   private func setupSubviews() {
@@ -76,10 +76,10 @@ class BagViewController: UIViewController {
   }
   
   private func createAmountValueLabel() {
-    addedProductAmountValue.frame = CGRect(x: 274, y: 116, width: 100, height: 20)
-    addedProductAmountValue.font = .boldSystemFont(ofSize: 15)
-    addedProductAmountValue.textAlignment = .right
-    view.addSubview(addedProductAmountValue)
+    addedProductAmountValueLabel.frame = CGRect(x: 274, y: 116, width: 100, height: 20)
+    addedProductAmountValueLabel.font = .boldSystemFont(ofSize: 15)
+    addedProductAmountValueLabel.textAlignment = .right
+    view.addSubview(addedProductAmountValueLabel)
   }
   
   private func createSizeLabel() {
@@ -168,12 +168,6 @@ class BagViewController: UIViewController {
     byeButton.layer.cornerRadius = 3
     byeButton.setTitle("Купить", for: .normal)
     byeButton.titleLabel?.textColor = .white
-    byeButton.addTarget(self, action: #selector(byeAction), for: .touchUpInside)
     view.addSubview(byeButton)
-  }
-  
-  // MARK: - Actions.
-  @objc func byeAction() {
-    
   }
 }
