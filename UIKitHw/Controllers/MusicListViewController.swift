@@ -9,7 +9,7 @@ import UIKit
 
 /// List music screen.
 class MusicListViewController: UIViewController {
-
+  
   // MARK: - Outlets.
   @IBOutlet weak var firstCoverImageView: UIImageView!
   @IBOutlet weak var secondCoverImageView: UIImageView!
@@ -17,7 +17,7 @@ class MusicListViewController: UIViewController {
   @IBOutlet weak var secondNameSongButton: UIButton!
   @IBOutlet weak var firstTimeSongLabel: UILabel!
   @IBOutlet weak var secondTimeSongLabel: UILabel!
-    
+  
   // MARK: - viewDidLoad.
   override func viewDidLoad() {
     super.viewDidLoad()

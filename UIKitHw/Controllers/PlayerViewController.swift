@@ -10,7 +10,7 @@ import UIKit
 
 /// Player detail screen.
 class PlayerViewController: UIViewController {
-
+  
   // MARK: - Outlets.
   @IBOutlet weak var coverImageView: UIImageView!
   @IBOutlet weak var nameSongLabel: UILabel!
@@ -71,19 +71,21 @@ class PlayerViewController: UIViewController {
   // MARK: - Validation playback.
   private func validationPlayback() {
     guard player?.isPlaying == true else {
-      return playPauseButton.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal) }
+      playPauseButton.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
+      return
+    }
     playPauseButton.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
   }
   
   // MARK: - Actions.
   @IBAction func playPauseAction(_ sender: UIButton) {
-    if player?.isPlaying == true {
+    guard player?.isPlaying == true else {
       player?.pause()
       sender.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
-    } else {
-      player?.play()
-      sender.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
+      return
     }
+    player?.play()
+    sender.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
   }
   
   @IBAction func playSliderAction(_ sender: UISlider) {
