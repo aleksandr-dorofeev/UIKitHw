@@ -70,11 +70,9 @@ class PlayerViewController: UIViewController {
   
   // MARK: - Validation playback.
   private func validationPlayback() {
-    if player?.isPlaying == true {
-      playPauseButton.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
-    } else {
-      playPauseButton.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
-    }
+    guard player?.isPlaying == true else {
+      return playPauseButton.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal) }
+    playPauseButton.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
   }
   
   // MARK: - Actions.
@@ -121,11 +119,16 @@ class PlayerViewController: UIViewController {
     updateInformation()
   }
   
+  @IBAction func volumeAction(_ sender: Any) {
+    player?.volume = volumeSlider.value
+  }
+  
   @IBAction func dismissAction(_ sender: Any) {
     player?.stop()
     dismiss(animated: true)
   }
   
+  // MARK: - @objc.
   @objc func timerAction() {
     timeSlider.value = Float(player?.currentTime ?? 0)
     let currentTime = Int(player?.currentTime ?? 0)
@@ -134,17 +137,13 @@ class PlayerViewController: UIViewController {
     currentTimeLabel.text = String(format: "%02d:%02d", minutes, seconds)
   }
   
-  @IBAction func volumeAction(_ sender: Any) {
-    player?.volume = volumeSlider.value
-  }
-  
   // MARK: - Error alert(Не знаю как вынести правильно что бы переиспользовать).
   private func errorAlert(title: String, message: String, style: UIAlertController.Style) {
     let alert = UIAlertController(title: title,
                                   message: message,
                                   preferredStyle: style)
-    let action = UIAlertAction(title: "Ok", style: .default)
-    alert.addAction(action)
+    let alertAction = UIAlertAction(title: "Ok", style: .default)
+    alert.addAction(alertAction)
     present(alert, animated: true)
   }
 }

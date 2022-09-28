@@ -83,8 +83,8 @@ class MusicListViewController: UIViewController {
     let alert = UIAlertController(title: title,
                                   message: message,
                                   preferredStyle: style)
-    let action = UIAlertAction(title: "Ok", style: .default)
-    alert.addAction(action)
+    let alertAction = UIAlertAction(title: "Ok", style: .default)
+    alert.addAction(alertAction)
     present(alert, animated: true)
   }
 }

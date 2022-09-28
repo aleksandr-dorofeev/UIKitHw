@@ -21,9 +21,7 @@ struct Song {
   }
   
   mutating func imageUrl() -> UIImage? {
-    if let image = UIImage(named: imageName) {
-      return image
-    }
-    return nil
+    guard let image = UIImage(named: imageName) else { return nil }
+    return image
   }
 }
