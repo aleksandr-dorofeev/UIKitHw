@@ -8,7 +8,7 @@
 import UIKit
 
 /// Login screen.
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
   
   // MARK: - Lazy properties.
   lazy var titleImageView = UIImageView()
@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
   lazy var passwordTextField = UITextField()
   lazy var showPasswordButton = UIButton()
   lazy var comeInButton = UIButton()
+  lazy var logoImageView = UIImageView()
+  lazy var logoTextLabel = UILabel()
   
   // MARK: - viewDidLoad.
   override func viewDidLoad() {
@@ -27,8 +29,10 @@ class LoginViewController: UIViewController {
   
   // MARK: - Setup Subviews.
   private func setUpViews() {
-    createTitleImageView()
+    createBackgroundColor()
     createEmailLabel()
+    createLogoImageView()
+    createLogoNameLabel()
     createPhoneTextField()
     createPasswordTextField()
     createPasswordLabel()
@@ -38,12 +42,25 @@ class LoginViewController: UIViewController {
   }
   
   // MARK: - Create Subviews.
-  private func createTitleImageView() {
-    titleImageView.frame = CGRect(x: 0, y: 130, width: 250, height: 100)
-    titleImageView.image = UIImage(named: "NBLogo")
-    titleImageView.contentMode = .scaleAspectFit
-    titleImageView.center.x = view.center.x
-    view.addSubview(titleImageView)
+  private func createBackgroundColor() {
+    view.backgroundColor = .white
+  }
+  
+  private func createLogoImageView() {
+    logoImageView.image = UIImage(systemName: "icloud.fill")
+    logoImageView.frame = CGRect(x: 0, y: 100, width: 200, height: 100)
+    logoImageView.center.x = view.center.x
+    logoImageView.tintColor = .lightGray
+    view.addSubview(logoImageView)
+  }
+  
+  private func createLogoNameLabel() {
+    logoTextLabel.text = "Bringo"
+    logoTextLabel.frame = CGRect(x: 80, y: 45, width: 50, height: 20)
+    logoTextLabel.font = UIFont(name: "Arial", size: 17)
+    logoTextLabel.textAlignment = .center
+    logoTextLabel.textColor = .systemBlue
+    logoImageView.addSubview(logoTextLabel)
   }
   
   private func createEmailLabel() {
@@ -101,12 +118,12 @@ class LoginViewController: UIViewController {
   }
   
   private func createLoginButton() {
-    comeInButton.frame = CGRect(x: 220, y: 650, width: 350, height: 50)
+    comeInButton.frame = CGRect(x: 0, y: 650, width: 350, height: 50)
     comeInButton.center.x = view.center.x
     comeInButton.layer.cornerRadius = 6
     comeInButton.setTitle("Вход", for: .normal)
-    comeInButton.setTitleColor(.white, for: .normal)
-    comeInButton.titleLabel?.font =  UIFont(name: "Arial", size: 20)
+    comeInButton.setTitleColor( .white, for: .normal)
+    comeInButton.titleLabel?.font = UIFont(name: "Arial", size: 20)
     comeInButton.backgroundColor = UIColor(red: 0.1, green: 0.3, blue: 0.6, alpha: 0.5)
     comeInButton.addTarget(self, action: #selector(pushProductScreenAction), for: .touchUpInside)
     view.addSubview(comeInButton)
@@ -137,7 +154,9 @@ class LoginViewController: UIViewController {
       return
     }
     let foodVC = FoodViewController()
+    let navigationController = UINavigationController(rootViewController: foodVC)
     foodVC.title = "Food"
-    navigationController?.pushViewController(foodVC, animated: true)
+    navigationController.modalPresentationStyle = .fullScreen
+    present(navigationController, animated: true)
   }
 }

@@ -11,12 +11,18 @@
 		F850852828E49CB000C81DC2 /* PizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850852728E49CB000C81DC2 /* PizzaViewController.swift */; };
 		F850852A28E49CC500C81DC2 /* DetailPizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850852928E49CC500C81DC2 /* DetailPizzaViewController.swift */; };
 		F850852C28E49CDE00C81DC2 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850852B28E49CDE00C81DC2 /* PaymentViewController.swift */; };
-		F850852F28E49F3D00C81DC2 /* ErrorAlertForLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850852E28E49F3D00C81DC2 /* ErrorAlertForLogin.swift */; };
+		F850852F28E49F3D00C81DC2 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850852E28E49F3D00C81DC2 /* Alerts.swift */; };
 		F850853228E49FD100C81DC2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850853128E49FD100C81DC2 /* User.swift */; };
 		F850853428E4ADD600C81DC2 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850853328E4ADD600C81DC2 /* Delegate.swift */; };
 		F850853628E4AE0500C81DC2 /* BottomLineForTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850853528E4AE0500C81DC2 /* BottomLineForTextField.swift */; };
 		F850853828E4AF6900C81DC2 /* PhoneFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850853728E4AF6900C81DC2 /* PhoneFormatter.swift */; };
 		F850853A28E4B40900C81DC2 /* DismissKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850853928E4B40900C81DC2 /* DismissKeyBoard.swift */; };
+		F850853C28E4E6A800C81DC2 /* PresentFormSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850853B28E4E6A800C81DC2 /* PresentFormSheet.swift */; };
+		F850853E28E58C6E00C81DC2 /* CreateUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850853D28E58C6E00C81DC2 /* CreateUIElements.swift */; };
+		F850854228E6150B00C81DC2 /* Returnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850854128E6150B00C81DC2 /* Returnable.swift */; };
+		F850854528E6160C00C81DC2 /* GoToRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850854428E6160C00C81DC2 /* GoToRoot.swift */; };
+		F850854728E62C7F00C81DC2 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850854628E62C7F00C81DC2 /* Pizza.swift */; };
+		F850854928E6478500C81DC2 /* CaloriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850854828E6478500C81DC2 /* CaloriesViewController.swift */; };
 		F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E428DC7234008BFEBC /* AppDelegate.swift */; };
 		F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */; };
 		F8BE19E928DC7234008BFEBC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E828DC7234008BFEBC /* LoginViewController.swift */; };
@@ -30,12 +36,18 @@
 		F850852728E49CB000C81DC2 /* PizzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaViewController.swift; sourceTree = "<group>"; };
 		F850852928E49CC500C81DC2 /* DetailPizzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPizzaViewController.swift; sourceTree = "<group>"; };
 		F850852B28E49CDE00C81DC2 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
-		F850852E28E49F3D00C81DC2 /* ErrorAlertForLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertForLogin.swift; sourceTree = "<group>"; };
+		F850852E28E49F3D00C81DC2 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		F850853128E49FD100C81DC2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F850853328E4ADD600C81DC2 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		F850853528E4AE0500C81DC2 /* BottomLineForTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineForTextField.swift; sourceTree = "<group>"; };
 		F850853728E4AF6900C81DC2 /* PhoneFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFormatter.swift; sourceTree = "<group>"; };
 		F850853928E4B40900C81DC2 /* DismissKeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyBoard.swift; sourceTree = "<group>"; };
+		F850853B28E4E6A800C81DC2 /* PresentFormSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentFormSheet.swift; sourceTree = "<group>"; };
+		F850853D28E58C6E00C81DC2 /* CreateUIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUIElements.swift; sourceTree = "<group>"; };
+		F850854128E6150B00C81DC2 /* Returnable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Returnable.swift; sourceTree = "<group>"; };
+		F850854428E6160C00C81DC2 /* GoToRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToRoot.swift; sourceTree = "<group>"; };
+		F850854628E62C7F00C81DC2 /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		F850854828E6478500C81DC2 /* CaloriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesViewController.swift; sourceTree = "<group>"; };
 		F8BE19E128DC7234008BFEBC /* UIKitHw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE19E428DC7234008BFEBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,11 +72,13 @@
 		F850852428E49C1500C81DC2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F850854328E6152400C81DC2 /* Protocols */,
 				F8BE19E828DC7234008BFEBC /* LoginViewController.swift */,
 				F850852528E49C9700C81DC2 /* FoodViewController.swift */,
 				F850852728E49CB000C81DC2 /* PizzaViewController.swift */,
 				F850852928E49CC500C81DC2 /* DetailPizzaViewController.swift */,
 				F850852B28E49CDE00C81DC2 /* PaymentViewController.swift */,
+				F850854828E6478500C81DC2 /* CaloriesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -72,21 +86,33 @@
 		F850852D28E49F2700C81DC2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F850852E28E49F3D00C81DC2 /* ErrorAlertForLogin.swift */,
+				F850852E28E49F3D00C81DC2 /* Alerts.swift */,
 				F850853928E4B40900C81DC2 /* DismissKeyBoard.swift */,
 				F850853328E4ADD600C81DC2 /* Delegate.swift */,
 				F850853728E4AF6900C81DC2 /* PhoneFormatter.swift */,
 				F850853528E4AE0500C81DC2 /* BottomLineForTextField.swift */,
+				F850853B28E4E6A800C81DC2 /* PresentFormSheet.swift */,
+				F850853D28E58C6E00C81DC2 /* CreateUIElements.swift */,
+				F850854428E6160C00C81DC2 /* GoToRoot.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F850853028E49FC500C81DC2 /* Model */ = {
+		F850853028E49FC500C81DC2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F850853128E49FD100C81DC2 /* User.swift */,
+				F850854628E62C7F00C81DC2 /* Pizza.swift */,
 			);
-			path = Model;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F850854328E6152400C81DC2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F850854128E6150B00C81DC2 /* Returnable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F8BE19D828DC7234008BFEBC = {
@@ -110,7 +136,7 @@
 			children = (
 				F8BE19E428DC7234008BFEBC /* AppDelegate.swift */,
 				F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */,
-				F850853028E49FC500C81DC2 /* Model */,
+				F850853028E49FC500C81DC2 /* Models */,
 				F850852D28E49F2700C81DC2 /* Extensions */,
 				F850852428E49C1500C81DC2 /* Controllers */,
 				F8BE19EA28DC7234008BFEBC /* Main.storyboard */,
@@ -217,16 +243,22 @@
 			files = (
 				F850852C28E49CDE00C81DC2 /* PaymentViewController.swift in Sources */,
 				F850852828E49CB000C81DC2 /* PizzaViewController.swift in Sources */,
+				F850854728E62C7F00C81DC2 /* Pizza.swift in Sources */,
 				F8BE19E928DC7234008BFEBC /* LoginViewController.swift in Sources */,
 				F850852A28E49CC500C81DC2 /* DetailPizzaViewController.swift in Sources */,
 				F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */,
 				F850853628E4AE0500C81DC2 /* BottomLineForTextField.swift in Sources */,
 				F850853228E49FD100C81DC2 /* User.swift in Sources */,
+				F850854528E6160C00C81DC2 /* GoToRoot.swift in Sources */,
 				F850853428E4ADD600C81DC2 /* Delegate.swift in Sources */,
-				F850852F28E49F3D00C81DC2 /* ErrorAlertForLogin.swift in Sources */,
+				F850852F28E49F3D00C81DC2 /* Alerts.swift in Sources */,
 				F850853828E4AF6900C81DC2 /* PhoneFormatter.swift in Sources */,
 				F850852628E49C9700C81DC2 /* FoodViewController.swift in Sources */,
+				F850854928E6478500C81DC2 /* CaloriesViewController.swift in Sources */,
+				F850853C28E4E6A800C81DC2 /* PresentFormSheet.swift in Sources */,
+				F850853E28E58C6E00C81DC2 /* CreateUIElements.swift in Sources */,
 				F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */,
+				F850854228E6150B00C81DC2 /* Returnable.swift in Sources */,
 				F850853A28E4B40900C81DC2 /* DismissKeyBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
