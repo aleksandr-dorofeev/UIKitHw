@@ -18,7 +18,7 @@ final class PizzaViewController: UIViewController {
   lazy var margaritaButton = UIButton()
   lazy var pepperoniButton = UIButton()
   
-  var pizza: [Pizza] = [
+  var pizzas: [Pizza] = [
     Pizza(name: "Маргарита",
           image: "margarita",
           compound: "Дрожжевое тесто, сливочное масло, альпийский сыр, базилик, фирменный соус, томаты",
@@ -58,21 +58,21 @@ final class PizzaViewController: UIViewController {
   
   private func createMargaritaImageView() {
     margaritaImageView.frame = CGRect(x: 16, y: 108, width: 150, height: 150)
-    margaritaImageView.image = UIImage(named: pizza.first?.image ?? " ")
+    margaritaImageView.image = UIImage(named: pizzas.first?.image ?? " ")
     margaritaImageView.contentMode = .scaleAspectFit
     view.addSubview(margaritaImageView)
   }
   
   private func createPepperoniImageView() {
     pepperoniImageView.frame = CGRect(x: 16, y: 294, width: 150, height: 150)
-    pepperoniImageView.image = UIImage(named: pizza.last?.image ?? " ")
+    pepperoniImageView.image = UIImage(named: pizzas.last?.image ?? " ")
     pepperoniImageView.contentMode = .scaleAspectFit
     view.addSubview(pepperoniImageView)
   }
   
   private func createMargaritaLabel() {
     margaritaLabel.frame = CGRect(x: 174, y: 158, width: 142, height: 50)
-    margaritaLabel.text = pizza.first?.name ?? " "
+    margaritaLabel.text = pizzas.first?.name ?? " "
     margaritaLabel.textAlignment = .left
     margaritaLabel.font = UIFont(name: "Arial", size: 20)
     view.addSubview(margaritaLabel)
@@ -80,7 +80,7 @@ final class PizzaViewController: UIViewController {
   
   private func createPepperoniLabel() {
     pepperoniLabel.frame = CGRect(x: 174, y: 344, width: 142, height: 50)
-    pepperoniLabel.text = pizza.last?.name ?? " "
+    pepperoniLabel.text = pizzas.last?.name ?? " "
     pepperoniLabel.textAlignment = .left
     pepperoniLabel.font = UIFont(name: "Arial", size: 20)
     view.addSubview(pepperoniLabel)
@@ -109,13 +109,13 @@ final class PizzaViewController: UIViewController {
   // MARK: - Actions.
   @objc private func margaritaAction() {
     let detailVC = DetailPizzaViewController()
-    detailVC.pizza = pizza.first
+    detailVC.pizza = pizzas.first
     formSheetPresentViewController(view: detailVC)
   }
   
   @objc private func pepperoniAction() {
     let detailVC = DetailPizzaViewController()
-    detailVC.pizza = pizza.last
+    detailVC.pizza = pizzas.last
     formSheetPresentViewController(view: detailVC)
   }
 }

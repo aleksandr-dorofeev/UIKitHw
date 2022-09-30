@@ -1,5 +1,5 @@
 //
-//  Delegate.swift
+//  Delegate+Extension.swift
 //  UIKitHw
 //
 //  Created by Aleksandr Dorofeev on 28.09.2022.

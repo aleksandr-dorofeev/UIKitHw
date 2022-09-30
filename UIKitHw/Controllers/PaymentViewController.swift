@@ -20,7 +20,7 @@ final class PaymentViewController: UIViewController {
   lazy var payButton = UIButton(configuration: .filled())
   
   // Delegate for pop VC.
-  weak var delegate: Returnable?
+  weak var delegate: ReturnableDelegate?
   
   // Variables for transfer data.
   var nameOrder: String?
