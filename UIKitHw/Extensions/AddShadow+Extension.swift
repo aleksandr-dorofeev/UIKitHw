@@ -10,12 +10,8 @@ import UIKit
 /// Extension with setup shadow for label text.
 extension UILabel {
   func setTextWithShadow(_ string: String) {
-    let shadow = NSShadow()
-    shadow.shadowBlurRadius = 3
-    shadow.shadowOffset = CGSize(width: 3, height: 3)
-    shadow.shadowColor = UIColor.black.withAlphaComponent(0.5)
-    let attributes = [ NSAttributedString.Key.shadow: shadow ]
-    let attributedString = NSAttributedString(string: string, attributes: attributes)
-    self.attributedText = attributedString
+    self.layer.shadowOffset = CGSize(width: 0, height: 0)
+    self.layer.shadowOpacity = 1
+    self.layer.shadowRadius = 6
   }
 }
