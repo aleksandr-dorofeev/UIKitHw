@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "1280px-Apple_Pay_logo.svg.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
