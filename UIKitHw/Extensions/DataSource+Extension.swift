@@ -10,12 +10,15 @@ import UIKit
 /// Data source extension.
 extension ConfigurationViewController: UIPickerViewDataSource {
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    return 1
+    let numbersOfPicker = 1
+    return numbersOfPicker
   }
   
   func pickerView(_ pickerView: UIPickerView,
                   numberOfRowsInComponent component: Int) -> Int {
-    guard pickerView == colorPicker else { return numbersOfLine.count }
-    return colors.count
+    let amountOfLines = DefaultValues.numbersOfLine.count
+    let amountColors = DefaultValues.colors.count
+    guard pickerView == colorPicker else { return amountOfLines }
+    return amountColors
   }
 }

@@ -11,7 +11,6 @@ import UIKit
 extension ConfigurationViewController {
   func addTextAlert() {
     let textAlert = UIAlertController(title: "Введите текст", message: nil, preferredStyle: .alert)
-    
     let alertAction = UIAlertAction(title: "Ок", style: .default) { _ in
       guard let text = textAlert.textFields?.first?.text else { return }
       self.textLabel.text = text

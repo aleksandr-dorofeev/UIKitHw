@@ -12,14 +12,17 @@ extension ConfigurationViewController: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView,
                   didSelectRow row: Int,
                   inComponent components: Int) {
+    let colorValue = DefaultValues.colors[row]
     guard pickerView == colorPicker else { return }
-    textLabel.textColor = colors[row]
+    textLabel.textColor = colorValue
   }
   
   func pickerView(_ pickerView: UIPickerView,
                   titleForRow row: Int,
                   forComponent components: Int) -> String? {
-    guard pickerView == colorPicker else { return String(numbersOfLine[row]) }
-    return nameOfColors[row]
+    let numberOfLineString = String(DefaultValues.numbersOfLine[row])
+    let nameOfColor = DefaultValues.nameOfColors[row]
+    guard pickerView == colorPicker else { return numberOfLineString }
+    return nameOfColor
   }
 }
