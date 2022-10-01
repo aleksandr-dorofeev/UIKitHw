@@ -11,6 +11,7 @@
 		F885C56128E8874E00E695EB /* Delegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F885C56028E8874E00E695EB /* Delegate+Extension.swift */; };
 		F885C56328E8875E00E695EB /* DataSource+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F885C56228E8875E00E695EB /* DataSource+Extension.swift */; };
 		F88DF90F28E89137008A4966 /* AddBottomBorder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88DF90E28E89137008A4966 /* AddBottomBorder+Extension.swift */; };
+		F88DF91128E89CA2008A4966 /* AddShadow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88DF91028E89CA2008A4966 /* AddShadow+Extension.swift */; };
 		F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E428DC7234008BFEBC /* AppDelegate.swift */; };
 		F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */; };
 		F8BE19E928DC7234008BFEBC /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E828DC7234008BFEBC /* ConfigurationViewController.swift */; };
@@ -24,6 +25,7 @@
 		F885C56028E8874E00E695EB /* Delegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delegate+Extension.swift"; sourceTree = "<group>"; };
 		F885C56228E8875E00E695EB /* DataSource+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataSource+Extension.swift"; sourceTree = "<group>"; };
 		F88DF90E28E89137008A4966 /* AddBottomBorder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddBottomBorder+Extension.swift"; sourceTree = "<group>"; };
+		F88DF91028E89CA2008A4966 /* AddShadow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddShadow+Extension.swift"; sourceTree = "<group>"; };
 		F8BE19E128DC7234008BFEBC /* UIKitHw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE19E428DC7234008BFEBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				F885C56028E8874E00E695EB /* Delegate+Extension.swift */,
 				F885C56228E8875E00E695EB /* DataSource+Extension.swift */,
 				F88DF90E28E89137008A4966 /* AddBottomBorder+Extension.swift */,
+				F88DF91028E89CA2008A4966 /* AddShadow+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				F88DF90F28E89137008A4966 /* AddBottomBorder+Extension.swift in Sources */,
 				F885C56328E8875E00E695EB /* DataSource+Extension.swift in Sources */,
 				F885C55E28E8820000E695EB /* Alert+Extension.swift in Sources */,
+				F88DF91128E89CA2008A4966 /* AddShadow+Extension.swift in Sources */,
 				F8BE19E928DC7234008BFEBC /* ConfigurationViewController.swift in Sources */,
 				F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */,
 				F885C56128E8874E00E695EB /* Delegate+Extension.swift in Sources */,

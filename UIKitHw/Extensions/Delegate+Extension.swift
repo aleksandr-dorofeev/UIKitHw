@@ -20,9 +20,11 @@ extension ConfigurationViewController: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView,
                   titleForRow row: Int,
                   forComponent components: Int) -> String? {
-    let numberOfLineString = String(DefaultValues.numbersOfLine[row])
+    guard pickerView == colorPicker else {
+      let numberOfLineString = String(DefaultValues.numbersOfLine[row])
+      return numberOfLineString
+    }
     let nameOfColor = DefaultValues.nameOfColors[row]
-    guard pickerView == colorPicker else { return numberOfLineString }
     return nameOfColor
   }
 }

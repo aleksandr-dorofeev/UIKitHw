@@ -80,6 +80,7 @@ final class ConfigurationViewController: UIViewController {
     textLabel.frame = CGRect(x: 0, y: 100, width: 350, height: 150)
     textLabel.center.x = view.center.x
     textLabel.text = Constants.textInstruction
+    textLabel.setTextWithShadow(textLabel.text ?? " ")
     textLabel.textAlignment = .center
     textLabel.layer.borderWidth = 0.5
     textLabel.font.withSize(DefaultValues.fontSize)
