@@ -15,6 +15,7 @@
 		F885C55728E85B4200E695EB /* DataSource+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F885C55628E85B4200E695EB /* DataSource+Extension.swift */; };
 		F885C55928E8685A00E695EB /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F885C55828E8685A00E695EB /* AlarmViewController.swift */; };
 		F885C55B28E8691A00E695EB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F885C55A28E8691A00E695EB /* View+Extension.swift */; };
+		F88DF91328E8A400008A4966 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88DF91228E8A400008A4966 /* AddAlarmViewController.swift */; };
 		F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E428DC7234008BFEBC /* AppDelegate.swift */; };
 		F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */; };
 		F8BE19E928DC7234008BFEBC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E828DC7234008BFEBC /* TimerViewController.swift */; };
@@ -32,6 +33,7 @@
 		F885C55628E85B4200E695EB /* DataSource+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataSource+Extension.swift"; sourceTree = "<group>"; };
 		F885C55828E8685A00E695EB /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		F885C55A28E8691A00E695EB /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		F88DF91228E8A400008A4966 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
 		F8BE19E128DC7234008BFEBC /* UIKitHw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE19E428DC7234008BFEBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				F8BE19E828DC7234008BFEBC /* TimerViewController.swift */,
 				F885C55828E8685A00E695EB /* AlarmViewController.swift */,
+				F88DF91228E8A400008A4966 /* AddAlarmViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				F885C55728E85B4200E695EB /* DataSource+Extension.swift in Sources */,
 				F885C55928E8685A00E695EB /* AlarmViewController.swift in Sources */,
 				F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */,
+				F88DF91328E8A400008A4966 /* AddAlarmViewController.swift in Sources */,
 				F885C55528E85B3200E695EB /* Delegate+Extension.swift in Sources */,
 				F885C55B28E8691A00E695EB /* View+Extension.swift in Sources */,
 				F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */,

@@ -8,7 +8,7 @@
 import UIKit
 
 /// Timer screen.
-class TimerViewController: UIViewController {
+final class TimerViewController: UIViewController {
   
   // MARK: - Enums for constants.
   enum TimeUnits {

@@ -8,7 +8,7 @@
 import UIKit
 
 /// Alarm screen.
-class AlarmViewController: UIViewController {
+final class AlarmViewController: UIViewController {
   
   // MARK: - IBOutlets.
   @IBOutlet weak var configureAlarmView: UIView!
