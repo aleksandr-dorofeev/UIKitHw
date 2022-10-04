@@ -10,19 +10,19 @@ import UIKit
 /// Alarm screen.
 final class AlarmViewController: UIViewController {
   
-  // MARK: - IBOutlets.
-  @IBOutlet weak var configureAlarmView: UIView!
-  @IBOutlet weak var firstAlarmView: UIView!
-  @IBOutlet weak var secondAlarmView: UIView!
-  @IBOutlet weak var thirdAlarmView: UIView!
+  // MARK: - Private IBOutlets.
+  @IBOutlet private weak var configureAlarmView: UIView!
+  @IBOutlet private weak var firstAlarmView: UIView!
+  @IBOutlet private weak var secondAlarmView: UIView!
+  @IBOutlet private weak var thirdAlarmView: UIView!
   
-  // MARK: - viewDidAppear.
+  // MARK: - Lifecycle.
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     addBordersToViews()
   }
   
-  // MARK: - Configure views.
+  // MARK: - Private methods.
   private func addBordersToViews() {
     configureAlarmView.addTopBorder()
     configureAlarmView.addBottomBorder()

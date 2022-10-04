@@ -21,29 +21,28 @@ final class AddAlarmViewController: UIViewController {
     static let pickerViewMinutesMiddle = ((pickerViewRows / numberOfMin.count) / 2) * numberOfMin.count
   }
   
-  // MARK: - IBOutlets.
-  @IBOutlet weak var alarmTimePicker: UIDatePicker!
-  @IBOutlet weak var repeatButton: UIButton!
-  @IBOutlet weak var labelButton: UIButton!
-  @IBOutlet weak var melodyButton: UIButton!
-  @IBOutlet weak var repeatSignalButton: UIButton!
-  
-  // Values for timer picker.
+  // MARK: - Public Properties.
   var hour = 0
   var minutes = 0
   
-  // MARK: - viewDidLoad.
+  // MARK: - Private IBOutlets.
+  @IBOutlet private weak var alarmTimePicker: UIDatePicker!
+  @IBOutlet private weak var repeatButton: UIButton!
+  @IBOutlet private weak var labelButton: UIButton!
+  @IBOutlet private weak var melodyButton: UIButton!
+  @IBOutlet private weak var repeatSignalButton: UIButton!
+  
+  // MARK: - Lifecycle.
   override func viewDidLoad() {
     super.viewDidLoad()
     setupSubviews()
   }
   
-  // MARK: - Setup Subviews.
+  // MARK: - Private methods.
   private func setupSubviews() {
     addBordersForButtons()
   }
   
-  // MARK: - Create Subviews.
   private func addBordersForButtons() {
     repeatButton.addBottomBorder()
     labelButton.addBottomBorder()

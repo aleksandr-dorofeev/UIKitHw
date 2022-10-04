@@ -10,7 +10,7 @@ import UIKit
 /// Timer screen.
 final class TimerViewController: UIViewController {
   
-  // MARK: - Enums for constants.
+  // MARK: - Public enums.
   enum TimeUnits {
     static let hour = "ч"
     static let minute = "мин"
@@ -23,13 +23,15 @@ final class TimerViewController: UIViewController {
     static let numberOfMinAndSec = 60
   }
   
-  // MARK: - IBOutlets.
-  @IBOutlet weak var startButton: UIButton!
-  @IBOutlet weak var cancellationButton: UIButton!
-  @IBOutlet weak var timePicker: UIPickerView!
-  
-  // Values for timer picker.
+  // MARK: - Public properties.
   var hour = 0
   var minutes = 0
   var seconds = 0
+  
+  // MARK: - Public IBOutlets.
+  @IBOutlet weak var timePicker: UIPickerView!
+  
+  // MARK: - Private IBOutlets.
+  @IBOutlet private weak var startButton: UIButton!
+  @IBOutlet private weak var cancellationButton: UIButton!
 }

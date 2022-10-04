@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Datasource extension for timer.
+/// UIPickerViewDataSource.
 extension TimerViewController: UIPickerViewDataSource {
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return NumberOfUnits.numberOfUnits

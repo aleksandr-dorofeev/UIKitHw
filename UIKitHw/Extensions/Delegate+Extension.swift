@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Delegate extension for timer.
+/// UIPickerViewDelegate.
 extension TimerViewController: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
     let widthOfComponent = timePicker.frame.size.width / 3
