@@ -10,16 +10,24 @@ import UIKit
 /// Login screen.
 final class LoginViewController: UIViewController {
   
-  // MARK: - Enums.
+  // MARK: - Private Enums.
   private enum ConfigurationForAlerts {
     static let emptyTitle = " "
     static let comebackMessage = "С возвращением\n "
     static let prepositionIn = " в "
+    static let noAccessLogin = "Вы еще не зарегистрировались"
   }
   
+  private enum UserDefaultsKeys {
+    static let mail = "mail"
+  }
+    
   // MARK: - Private IOBOutlets.
   @IBOutlet weak var phoneOrMailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
+  
+  // MARK: - Private properties.
+  private var acceptedLogin = false
   
   // MARK: - Life circle.
   override func viewDidLoad() {
@@ -27,7 +35,7 @@ final class LoginViewController: UIViewController {
     createNotificationForKeyboard()
   }
   
-  // MARK: - Visual components.
+  // MARK: - Private methods.
   private func createNotificationForKeyboard() {
     NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
                                            object: nil,
@@ -45,8 +53,15 @@ final class LoginViewController: UIViewController {
   
   // MARK: - Private actions.
   @IBAction private func loginButton(_ sender: Any) {
-    verifyEntry()
-    forwardFullScreen()
+    guard
+      let login = phoneOrMailTextField.text,
+      let password = passwordTextField.text
+    else { return }
+    if acceptedLogin && Verify.enterVerify(phoneEmail: login, password: password) {
+      forwardFullScreen()
+    } else {
+      errorAlert(title: ConfigurationForAlerts.emptyTitle, message: ConfigurationForAlerts.noAccessLogin, style: .alert)
+    }
   }
   
   private func forwardFullScreen() {
@@ -55,7 +70,10 @@ final class LoginViewController: UIViewController {
                  style: .alert)
   }
   
-  private func verifyEntry() {
-    
+  @IBAction func verifyLoginAction(_ sender: UITextField) {
+    guard let mail = phoneOrMailTextField.text else { return }
+    if UserSettings.shared.checkMail(forKey: UserDefaultsKeys.mail) == mail {
+      acceptedLogin = true
+    }
   }
 }

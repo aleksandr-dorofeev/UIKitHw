@@ -39,12 +39,11 @@ struct Verify {
     return true
   }
   
- static func enterVerify(phone: String?, password: String?, email: String?) -> Bool {
-    if ( phone != nil || email != nil) && password != nil {
+ static func enterVerify(phoneEmail: String?, password: String?) -> Bool {
+    if phoneEmail != nil && password != nil {
       return true
     } else {
       return false
     }
   }
-  
 }

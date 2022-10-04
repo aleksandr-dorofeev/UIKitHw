@@ -21,12 +21,12 @@ final class SignUpViewController: UIViewController {
     static let prepositionIn = " в "
   }
   
+  // MARK: - Public properties.
+  var orderedService = String()
+  
   // MARK: - Private IBOutlet.
   @IBOutlet private weak var nameServiceLabel: UILabel!
   @IBOutlet private weak var signUpPicker: UIDatePicker!
-  
-  // Received data.
-  var orderedService = String()
   
   // MARK: - Life circle.
   override func viewDidLoad() {
@@ -34,7 +34,7 @@ final class SignUpViewController: UIViewController {
     configureAddedService()
   }
   
-  // MARK: - Visual Components.
+  // MARK: - Private methods.
   private func configureAddedService() {
     nameServiceLabel.text = orderedService
   }

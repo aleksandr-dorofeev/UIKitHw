@@ -18,6 +18,12 @@ final class RegistrationViewController: UIViewController {
     static let emptyDataMessage = "Пожалуйста, заполните все поля!"
     static let wrongDataTitle = "Вы ввели некорректные данные!"
     static let wrongDataMessage = "Пожалуйста, проверьте корректность данных."
+    static let alreadyRegistered = "Вы уже зарегестрированы!"
+  }
+  
+  private enum UserDefaultsKeys {
+    static let users = "users"
+    static let mail = "mail"
   }
   
   // MARK: - Public IOutlets.
@@ -36,7 +42,7 @@ final class RegistrationViewController: UIViewController {
     createNotificationForKeyboard()
   }
   
-  // MARK: - Visual components.
+  // MARK: - Private methods.
   private func createNotificationForKeyboard() {
     NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
                                            object: nil,
@@ -57,6 +63,11 @@ final class RegistrationViewController: UIViewController {
     guard agreementSwitch.isOn else { return }
     registrationButton.isEnabled = true
   }
+    
+  @IBAction func saveMailAction(_ sender: UITextField) {
+    guard let mail = emailTextField.text else { return }
+    UserSettings.shared.saveMail(mail: mail, forKey: UserDefaultsKeys.mail)
+  }
   
   @IBAction private func registrationAction(_ sender: UIButton) {
     verifyStatesOfElements()
@@ -65,7 +76,7 @@ final class RegistrationViewController: UIViewController {
   
   private func forwardFullScreen() {
     successAlert(title: Constants.successAlertTitle,
-                 message: Constants.welcomeMessage + (fullNameTextField.text ?? ""),
+                 message: Constants.welcomeMessage + (fullNameTextField.text ?? Constants.emptyTitle),
                  style: .alert)
     saveUserInUserDefaults()
   }
@@ -81,15 +92,17 @@ final class RegistrationViewController: UIViewController {
     verifyRegistration(user: user)
   }
   
+  // Проверка есть ли уже такой пользователь.
+  // Старался представить UserDefaults как БД, но не вышло,
+  // если можно докрутить, то напишите как, пожалуйста.
   private func verifyRegistration(user: User) {
-//    if UserSettings.users.contains(user.phone) && UserSettings.users.contains(where: user.mail) {
-//      errorAlert(title: "Ой", message: "Такой пользователь уже существует!", style: .alert)
-//    } else {
-//      UserSettings.userName = user.fullName
-//      UserSettings.userMail = user.mail
-//      UserSettings.userPhone = user.phone
-//      UserSettings.userPassword = user.password
-//    }
+    if UserSettings.shared.users.firstIndex(of: user) != nil {
+      errorAlert(title: Constants.emptyTitle, message: Constants.alreadyRegistered, style: .alert)
+    } else {
+      UserSettings.shared.users.append(user)
+      UserDefaults.standard.set(
+        try? PropertyListEncoder().encode(UserSettings.shared.users), forKey: UserDefaultsKeys.users)
+    }
   }
   
   private func verifyStatesOfElements() {

@@ -7,30 +7,22 @@
 
 import Foundation
 
+/// Additional class with users collection.
 final class UserSettings {
+
+  // MARK: - Public properties.
+  // Singletone.
+  static var shared = UserSettings()
+  public lazy var defaults = UserDefaults.standard
+  public var users: [User] = []
   
-  // MARK: - Private enum.
-  private enum SettingsKeys: String {
-    case userName
-    case userMail
-    case userPhone
-    case userPassword
+  // MARK: - Public methods.
+  public func saveMail(mail: String, forKey: String) {
+    defaults.set(mail, forKey: forKey)
   }
   
-  static let defaults = UserDefaults.standard
-  
-  // MARK: - Static properties.
-  
-  static var users: [User] {
-    get {
-      if let data = try? PropertyListEncoder().encode(self.users) {
-        return UserDefaults.standard.set(data, forKey: "Users")
-          }
-    }
-    set {
-      if let data = defaults.data(forKey: "Users") {
-        let array = try! PropertyListDecoder().decode([User].self, from: data)
-      }
-    }
+  public func checkMail(forKey: String) -> String {
+    let mail = defaults.value(forKey: forKey) as? String ?? ""
+    return mail
   }
 }

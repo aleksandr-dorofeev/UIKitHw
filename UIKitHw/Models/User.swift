@@ -8,7 +8,7 @@
 import Foundation
 
 /// Model for registration screen.
-struct User: Codable {
+struct User: Codable, Equatable {
   let fullName: String
   let mail: String
   let phone: String

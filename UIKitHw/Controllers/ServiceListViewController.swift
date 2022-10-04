@@ -16,6 +16,9 @@ final class ServiceListViewController: UIViewController {
     static let priceLabel = " - цена "
   }
   
+  // MARK: - Public properties.
+  var totalServiceOrder = String()
+  
   // MARK: - Private IBOutlet.
   @IBOutlet private weak var complexView: UIView!
   @IBOutlet private weak var shaveView: UIView!
@@ -30,9 +33,6 @@ final class ServiceListViewController: UIViewController {
   @IBOutlet private weak var shaveButton: UIButton!
   @IBOutlet private weak var cutButton: UIButton!
   @IBOutlet private weak var addedServiceLabel: UILabel!
-  
-  // Added services.
-  var totalServiceOrder = String()
   
   // MARK: - Life circle.
   override func viewDidLoad() {

@@ -22,6 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
+                                    <action selector="verifyLoginAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="sb7-NO-OfT"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="eOt-TA-agX"/>
                                 </connections>
                             </textField>
@@ -128,6 +129,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
+                                    <action selector="saveMailAction:" destination="irK-fe-aem" eventType="editingDidEnd" id="HMY-on-3jY"/>
                                     <outlet property="delegate" destination="irK-fe-aem" id="kPK-jC-NOF"/>
                                 </connections>
                             </textField>
@@ -423,7 +425,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="pqL-gS-VgD">
-                                <rect key="frame" x="15" y="143" width="357" height="310"/>
+                                <rect key="frame" x="15" y="143" width="356" height="310"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="662713200">
                                     <!--2022-01-01 07:00:00 +0000-->

@@ -10,15 +10,16 @@ import UIKit
 /// Alert extension.
 extension UIViewController {
   
-  // MARK: - Enums.
-  enum ConfigurationForAlerts {
-    static let okButton = "Ok"
-  }
-  
+  // MARK: - Public Enums.
   enum StoryboardsIDs {
     static let main = "Main"
     static let navigationId = "navigationID"
     static let signUpId = "signUpID"
+  }
+  
+  // MARK: - Private Enums.
+  private enum ConfigurationForAlerts {
+    static let okButton = "Ok"
   }
   
   // MARK: - Public methods.
