@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Delegate extension.
+/// UIPickerViewDelegate.
 extension ConfigurationViewController: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView,
                   didSelectRow row: Int,

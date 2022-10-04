@@ -17,6 +17,6 @@ extension UILabel {
                                 width: self.frame.size.width,
                                 height: thickness)
     bottomBorder.backgroundColor = UIColor.darkGray.cgColor
-    self.layer.addSublayer(bottomBorder)
+    layer.addSublayer(bottomBorder)
   }
 }

@@ -42,7 +42,7 @@ final class ConfigurationViewController: UIViewController {
     static let numbersOfLine = [1, 2, 3, 4, 5]
   }
   
-  // MARK: - Lazy properties.
+  // MARK: - Visual Components.
   lazy var textLabel = UILabel()
   lazy var sizeFontLabel = UILabel()
   lazy var colorLabel = UILabel()
@@ -51,13 +51,13 @@ final class ConfigurationViewController: UIViewController {
   lazy var colorPicker = UIPickerView()
   lazy var numberOfLinePicker = UIPickerView()
   
-  // MARK: - viewDidLoad.
+  // MARK: - Lifecycle.
   override func viewDidLoad() {
     super.viewDidLoad()
     setupSubviews()
   }
   
-  // MARK: - Setup Subviews.
+  // MARK: - Private methods.
   private func setupSubviews() {
     createAddNavigationItem()
     createTextLabel()
@@ -69,7 +69,6 @@ final class ConfigurationViewController: UIViewController {
     createNumberOfLinesPicker()
   }
   
-  // MARK: - Create elements.
   private func createAddNavigationItem() {
     navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                        target: self,
@@ -150,7 +149,7 @@ final class ConfigurationViewController: UIViewController {
     view.addSubview(numberOfLinePicker)
   }
   
-  // MARK: - Actions.
+  // MARK: - Private Actions.
   @objc private func addTextAction() {
     addTextAlert()
   }
@@ -161,6 +160,6 @@ final class ConfigurationViewController: UIViewController {
     textLabel.font = .systemFont(ofSize: DefaultValues.fontSize)
     textLabel.numberOfLines = DefaultValues.numbersOfLine[numberOfLinePicker.selectedRow(inComponent: 0)]
     let fontSizeValue = (String(format: "%.1f", DefaultValues.fontSize))
-    sizeFontLabel.text = Constants.fontSize + Constants.space + fontSizeValue
+    sizeFontLabel.text = "\(Constants.fontSize) + \(Constants.space) + \(fontSizeValue)"
   }
 }
