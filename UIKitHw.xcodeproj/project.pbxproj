@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F88DF93928EC74A5008A4966 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88DF93828EC74A5008A4966 /* Book.swift */; };
+		F88DF93C28EC7764008A4966 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88DF93B28EC7764008A4966 /* BookViewController.swift */; };
+		F88DF93E28EC9CDB008A4966 /* Delegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88DF93D28EC9CDB008A4966 /* Delegate+Extension.swift */; };
+		F88DF94128EC9CF9008A4966 /* Datasource+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88DF94028EC9CF9008A4966 /* Datasource+Extension.swift */; };
 		F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E428DC7234008BFEBC /* AppDelegate.swift */; };
 		F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */; };
 		F8BE19E928DC7234008BFEBC /* HomeWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E828DC7234008BFEBC /* HomeWorkViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F88DF93828EC74A5008A4966 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F88DF93B28EC7764008A4966 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		F88DF93D28EC9CDB008A4966 /* Delegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delegate+Extension.swift"; sourceTree = "<group>"; };
+		F88DF94028EC9CF9008A4966 /* Datasource+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Datasource+Extension.swift"; sourceTree = "<group>"; };
 		F8BE19E128DC7234008BFEBC /* UIKitHw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE19E428DC7234008BFEBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,12 +45,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F88DF93428EC1625008A4966 /* ReplayLesson */ = {
+		F88DF93428EC1625008A4966 /* ReplayLessonScreen */ = {
 			isa = PBXGroup;
 			children = (
 				F8BE19E828DC7234008BFEBC /* HomeWorkViewController.swift */,
 			);
-			path = ReplayLesson;
+			path = ReplayLessonScreen;
+			sourceTree = "<group>";
+		};
+		F88DF93728EC748C008A4966 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F88DF93828EC74A5008A4966 /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F88DF93A28EC7751008A4966 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F88DF93B28EC7764008A4966 /* BookViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F88DF93F28EC9CDF008A4966 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F88DF93D28EC9CDB008A4966 /* Delegate+Extension.swift */,
+				F88DF94028EC9CF9008A4966 /* Datasource+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F8BE19D828DC7234008BFEBC = {
@@ -64,9 +97,12 @@
 		F8BE19E328DC7234008BFEBC /* UIKitHw */ = {
 			isa = PBXGroup;
 			children = (
-				F88DF93428EC1625008A4966 /* ReplayLesson */,
+				F88DF93428EC1625008A4966 /* ReplayLessonScreen */,
 				F8BE19E428DC7234008BFEBC /* AppDelegate.swift */,
 				F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */,
+				F88DF93F28EC9CDF008A4966 /* Extensions */,
+				F88DF93728EC748C008A4966 /* Models */,
+				F88DF93A28EC7751008A4966 /* Controllers */,
 				F8BE19EA28DC7234008BFEBC /* Main.storyboard */,
 				F8BE19ED28DC7236008BFEBC /* Assets.xcassets */,
 				F8BE19EF28DC7236008BFEBC /* LaunchScreen.storyboard */,
@@ -170,8 +206,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8BE19E928DC7234008BFEBC /* HomeWorkViewController.swift in Sources */,
+				F88DF94128EC9CF9008A4966 /* Datasource+Extension.swift in Sources */,
 				F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */,
+				F88DF93C28EC7764008A4966 /* BookViewController.swift in Sources */,
 				F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */,
+				F88DF93E28EC9CDB008A4966 /* Delegate+Extension.swift in Sources */,
+				F88DF93928EC74A5008A4966 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
