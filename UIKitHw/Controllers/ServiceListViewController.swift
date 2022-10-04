@@ -10,13 +10,13 @@ import UIKit
 /// Service list screen.
 final class ServiceListViewController: UIViewController {
   
-  // MARK: - Enums.
-  enum Constans {
+  // MARK: - Private enums.
+  private enum Constans {
     static let nextString = "\n"
     static let priceLabel = " - цена "
   }
   
-  // MARK: - @IBOutlet.
+  // MARK: - Private IBOutlet.
   @IBOutlet private weak var complexView: UIView!
   @IBOutlet private weak var shaveView: UIView!
   @IBOutlet private weak var cutView: UIView!
@@ -39,6 +39,7 @@ final class ServiceListViewController: UIViewController {
     super.viewDidLoad()
   }
   
+  // MARK: - Private actions.
   @IBAction private func addManCutAction(_ sender: Any) {
     complexView.alpha = 0.1
     complexButton.isEnabled = false

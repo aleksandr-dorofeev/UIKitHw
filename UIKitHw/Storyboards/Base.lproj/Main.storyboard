@@ -83,8 +83,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Вход" id="Sdw-NM-TY8"/>
                     <connections>
-                        <outlet property="passwordTextField" destination="nWc-b0-NM1" id="kqd-m8-ueP"/>
-                        <outlet property="phoneOrMailTextField" destination="u5C-Mc-2lj" id="TdR-iB-TGw"/>
+                        <outlet property="passwordTextField" destination="nWc-b0-NM1" id="x1l-xL-NQ7"/>
+                        <outlet property="phoneOrMailTextField" destination="u5C-Mc-2lj" id="FpX-hb-Arj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -202,10 +202,10 @@
                     <navigationItem key="navigationItem" title="Регистрация " id="t0L-Ql-Bc6"/>
                     <connections>
                         <outlet property="agreementSwitch" destination="SCB-M3-bpr" id="esA-Ti-2dG"/>
-                        <outlet property="emailTextField" destination="qzt-vU-wcZ" id="OdW-OB-3nI"/>
-                        <outlet property="fullNameTextField" destination="qpB-1x-iRQ" id="Cqn-9M-F6A"/>
-                        <outlet property="passwordTextField" destination="xl4-zd-OKq" id="tVP-nB-4VJ"/>
-                        <outlet property="phoneTextField" destination="dKW-ve-f3k" id="2YZ-XE-Wei"/>
+                        <outlet property="emailTextField" destination="qzt-vU-wcZ" id="U4O-dR-4dM"/>
+                        <outlet property="fullNameTextField" destination="qpB-1x-iRQ" id="iMg-Ph-FMx"/>
+                        <outlet property="passwordTextField" destination="xl4-zd-OKq" id="ea1-4m-0PS"/>
+                        <outlet property="phoneTextField" destination="dKW-ve-f3k" id="84P-PC-jNm"/>
                         <outlet property="registrationButton" destination="EOn-Vp-Piy" id="5mA-bh-V4x"/>
                     </connections>
                 </viewController>
@@ -423,7 +423,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="pqL-gS-VgD">
-                                <rect key="frame" x="15" y="143" width="358" height="310"/>
+                                <rect key="frame" x="15" y="143" width="357" height="310"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="662713200">
                                     <!--2022-01-01 07:00:00 +0000-->
@@ -475,7 +475,6 @@
         <!--Услуги-->
         <scene sceneID="PSg-jJ-E5f">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0k0-kX-ML6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="navigationID" automaticallyAdjustsScrollViewInsets="NO" id="Ug4-Hv-h0B" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Услуги" id="IB5-cS-Kfd"/>
                     <toolbarItems/>
@@ -488,6 +487,7 @@
                         <segue destination="lSD-of-X63" kind="relationship" relationship="rootViewController" id="c3B-Sy-zSP"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0k0-kX-ML6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2797" y="308"/>
         </scene>

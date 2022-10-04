@@ -10,8 +10,8 @@ import UIKit
 /// Registration screen.
 final class RegistrationViewController: UIViewController {
     
-  // MARK: - Enums.
-  enum Constants {
+  // MARK: - Private enums.
+  private enum Constants {
     static let successAlertTitle = "Вы зарегестрировались!"
     static let welcomeMessage = "Добро пожаловать\n"
     static let emptyTitle = " "
@@ -20,11 +20,13 @@ final class RegistrationViewController: UIViewController {
     static let wrongDataMessage = "Пожалуйста, проверьте корректность данных."
   }
   
-  // MARK: - Outlets.
+  // MARK: - Public IOutlets.
   @IBOutlet weak var phoneTextField: UITextField!
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var fullNameTextField: UITextField!
+  
+  // MARK: - Private IOutlets.
   @IBOutlet private weak var agreementSwitch: UISwitch!
   @IBOutlet private weak var registrationButton: UIButton!
   
@@ -50,7 +52,7 @@ final class RegistrationViewController: UIViewController {
     }
   }
   
-  // MARK: - Actions.
+  // MARK: - Private actions.
   @IBAction private func stateSwitchAction(_ sender: UISwitch) {
     guard agreementSwitch.isOn else { return }
     registrationButton.isEnabled = true
@@ -69,23 +71,25 @@ final class RegistrationViewController: UIViewController {
   }
   
   private func saveUserInUserDefaults() {
-    guard let name = fullNameTextField.text else { return }
-    guard let mail = emailTextField.text else { return }
-    guard let phone = phoneTextField.text else { return }
-    guard let password = passwordTextField.text else { return }
+    guard
+      let name = fullNameTextField.text,
+      let mail = emailTextField.text,
+      let phone = phoneTextField.text,
+      let password = passwordTextField.text
+    else { return }
     let user = User(fullName: name, mail: mail, phone: phone, password: password)
     verifyRegistration(user: user)
   }
   
   private func verifyRegistration(user: User) {
-    if user.phone == UserSettings.userPhone && user.mail == UserSettings.userMail {
-      errorAlert(title: "Ой", message: "Такой пользователь уже существует!", style: .alert)
-    } else {
-      UserSettings.userName = user.fullName
-      UserSettings.userMail = user.mail
-      UserSettings.userPhone = user.phone
-      UserSettings.userPassword = user.password
-    }
+//    if UserSettings.users.contains(user.phone) && UserSettings.users.contains(where: user.mail) {
+//      errorAlert(title: "Ой", message: "Такой пользователь уже существует!", style: .alert)
+//    } else {
+//      UserSettings.userName = user.fullName
+//      UserSettings.userMail = user.mail
+//      UserSettings.userPhone = user.phone
+//      UserSettings.userPassword = user.password
+//    }
   }
   
   private func verifyStatesOfElements() {
@@ -110,7 +114,7 @@ final class RegistrationViewController: UIViewController {
       return
     }
     guard
-      User.registrationVerify(phone: phoneTextField.text,
+      Verify.registrationVerify(phone: phoneTextField.text,
                               password: passwordTextField.text,
                               email: emailTextField.text,
                               name: fullNameTextField.text)

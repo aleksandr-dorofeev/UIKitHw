@@ -10,18 +10,18 @@ import UIKit
 /// Sign up to service screen.
 final class SignUpViewController: UIViewController {
   
-  // MARK: - Enums.
-  enum LocaleID {
+  // MARK: - Private enums.
+  private enum LocaleID {
     static let rus = "rus"
   }
   
-  enum ConfigurationForAlerts {
+  private enum ConfigurationForAlerts {
     static let emptyTitle = " "
     static let signUpMessage = "Вы записались на "
     static let prepositionIn = " в "
   }
   
-  // MARK: - @IBOutlet.
+  // MARK: - Private IBOutlet.
   @IBOutlet private weak var nameServiceLabel: UILabel!
   @IBOutlet private weak var signUpPicker: UIDatePicker!
   

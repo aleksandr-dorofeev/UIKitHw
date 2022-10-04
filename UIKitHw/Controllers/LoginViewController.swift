@@ -11,13 +11,13 @@ import UIKit
 final class LoginViewController: UIViewController {
   
   // MARK: - Enums.
-  enum ConfigurationForAlerts {
+  private enum ConfigurationForAlerts {
     static let emptyTitle = " "
     static let comebackMessage = "С возвращением\n "
     static let prepositionIn = " в "
   }
   
-  // MARK: - IOBOutlets.
+  // MARK: - Private IOBOutlets.
   @IBOutlet weak var phoneOrMailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
