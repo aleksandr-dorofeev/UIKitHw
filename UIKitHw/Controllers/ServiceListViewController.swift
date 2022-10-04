@@ -9,48 +9,80 @@ import UIKit
 
 /// Service list screen.
 final class ServiceListViewController: UIViewController {
-
-  @IBOutlet weak var complexView: UIView!
-  @IBOutlet weak var shaveView: UIView!
-  @IBOutlet weak var cutView: UIView!
-  @IBOutlet weak var manCutLabel: UILabel!
-  @IBOutlet weak var priceManCutLabel: UILabel!
-  @IBOutlet weak var shaveLabel: UILabel!
-  @IBOutlet weak var priceShaveLabel: UILabel!
-  @IBOutlet weak var complexLabel: UILabel!
-  @IBOutlet weak var complexButton: UIButton!
-  @IBOutlet weak var priceComplexLabel: UILabel!
-  @IBOutlet weak var shaveButton: UIButton!
-  @IBOutlet weak var cutButton: UIButton!
+  
+  // MARK: - Enums.
+  enum Constans {
+    static let nextString = "\n"
+    static let priceLabel = " - цена "
+  }
+  
+  // MARK: - @IBOutlet.
+  @IBOutlet private weak var complexView: UIView!
+  @IBOutlet private weak var shaveView: UIView!
+  @IBOutlet private weak var cutView: UIView!
+  @IBOutlet private weak var manCutLabel: UILabel!
+  @IBOutlet private weak var priceManCutLabel: UILabel!
+  @IBOutlet private weak var shaveLabel: UILabel!
+  @IBOutlet private weak var priceShaveLabel: UILabel!
+  @IBOutlet private weak var complexLabel: UILabel!
+  @IBOutlet private weak var complexButton: UIButton!
+  @IBOutlet private weak var priceComplexLabel: UILabel!
+  @IBOutlet private weak var shaveButton: UIButton!
+  @IBOutlet private weak var cutButton: UIButton!
+  @IBOutlet private weak var addedServiceLabel: UILabel!
+  
+  // Added services.
+  var totalServiceOrder = String()
   
   // MARK: - Life circle.
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-  
-  @IBAction func addManCutAction(_ sender: Any) {
-    complexView.alpha = 0.1
-    complexButton.isEnabled = false
-    let signUpVC = SignUpViewController()
-    signUpVC.service = manCutLabel.text
-    signUpVC.priceForService = priceManCutLabel.text
+  override func viewDidLoad() {
+    super.viewDidLoad()
   }
   
-  @IBAction func addShaveAction(_ sender: Any) {
+  @IBAction private func addManCutAction(_ sender: Any) {
     complexView.alpha = 0.1
     complexButton.isEnabled = false
-    let signUpVC = SignUpViewController()
-    signUpVC.service = shaveLabel.text
-    signUpVC.priceForService = priceShaveLabel.text
+    guard
+      let manCutService = manCutLabel.text,
+      let manCutPrice = priceManCutLabel.text
+    else { return }
+    totalServiceOrder += manCutService + Constans.priceLabel + manCutPrice + Constans.nextString
+    addedServiceLabel.text = totalServiceOrder
   }
   
-  @IBAction func addComplexAction(_ sender: Any) {
+  @IBAction private func addShaveAction(_ sender: Any) {
+    complexView.alpha = 0.1
+    complexButton.isEnabled = false
+    guard
+      let shaveService = shaveLabel.text,
+      let shavePrice = priceShaveLabel.text
+    else { return }
+    totalServiceOrder += shaveService + Constans.priceLabel + shavePrice + Constans.nextString
+    addedServiceLabel.text = totalServiceOrder
+  }
+  
+  @IBAction private func addComplexAction(_ sender: Any) {
     cutView.alpha = 0.1
     shaveView.alpha = 0.1
     cutButton.isEnabled = false
     shaveButton.isEnabled = false
-    let signUpVC = SignUpViewController()
-    signUpVC.service = complexLabel.text
-    signUpVC.priceForService = priceComplexLabel.text
+    guard
+      let complexService = complexLabel.text,
+      let complexPrice = priceComplexLabel.text
+    else { return }
+    totalServiceOrder += complexService + Constans.priceLabel + complexPrice + Constans.nextString
+    addedServiceLabel.text = totalServiceOrder
+  }
+  
+  @IBAction private func signUpAction(_ sender: UIButton) {
+    let storyboard = UIStoryboard(name: StoryboardsIDs.main, bundle: nil)
+    guard
+      let signUpVC = storyboard.instantiateViewController(
+        withIdentifier: StoryboardsIDs.signUpId) as? SignUpViewController
+    else {
+      return
+    }
+    signUpVC.orderedService = totalServiceOrder
+    navigationController?.pushViewController(signUpVC, animated: true)
   }
 }

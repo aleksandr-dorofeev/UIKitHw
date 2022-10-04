@@ -10,15 +10,22 @@ import UIKit
 /// Login screen.
 final class LoginViewController: UIViewController {
   
-  // MARK: - OBOutlets.
+  // MARK: - Enums.
+  enum ConfigurationForAlerts {
+    static let emptyTitle = " "
+    static let comebackMessage = "С возвращением\n "
+    static let prepositionIn = " в "
+  }
+  
+  // MARK: - IOBOutlets.
   @IBOutlet weak var phoneOrMailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
   // MARK: - Life circle.
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
     createNotificationForKeyboard()
-    }
+  }
   
   // MARK: - Visual components.
   private func createNotificationForKeyboard() {
@@ -43,15 +50,9 @@ final class LoginViewController: UIViewController {
   }
   
   private func forwardFullScreen() {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    guard
-      let serviceScreen = storyboard.instantiateViewController(
-        withIdentifier: "tabBarId") as? UITabBarController
-    else {
-      return
-    }
-    serviceScreen.modalPresentationStyle = .fullScreen
-    present(serviceScreen, animated: true)
+    successAlert(title: ConfigurationForAlerts.emptyTitle,
+                 message: ConfigurationForAlerts.comebackMessage + (phoneOrMailTextField.text ?? ""),
+                 style: .alert)
   }
   
   private func verifyEntry() {

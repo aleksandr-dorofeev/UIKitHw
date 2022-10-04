@@ -7,12 +7,55 @@
 
 import UIKit
 
+/// Alert extension.
 extension UIViewController {
+  
+  // MARK: - Enums.
+  enum ConfigurationForAlerts {
+    static let okButton = "Ok"
+  }
+  
+  enum StoryboardsIDs {
+    static let main = "Main"
+    static let navigationId = "navigationID"
+    static let signUpId = "signUpID"
+  }
+  
+  // MARK: - Public methods.
   func errorAlert(title: String, message: String, style: UIAlertController.Style) {
     let alert = UIAlertController(title: title,
                                   message: message,
                                   preferredStyle: style)
-    let action = UIAlertAction(title: "Ok", style: .default)
+    let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .default)
+    alert.addAction(action)
+    present(alert, animated: true)
+  }
+  
+  func successAlert(title: String, message: String, style: UIAlertController.Style) {
+    let alert = UIAlertController(title: title,
+                                  message: message,
+                                  preferredStyle: style)
+    let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .cancel) { _ in
+      let storyboard = UIStoryboard(name: StoryboardsIDs.main, bundle: nil)
+      guard
+        let serviceScreen = storyboard.instantiateViewController(
+          withIdentifier: StoryboardsIDs.navigationId) as? UINavigationController
+      else {
+        return
+      }
+      serviceScreen.modalPresentationStyle = .fullScreen
+      self.present(serviceScreen, animated: true)
+    }
+    alert.addAction(action)
+    present(alert, animated: true)
+  }
+  
+  func signUpAlert(title: String, message: String, style: UIAlertController.Style) {
+    let alert = UIAlertController(title: title,
+                                  message: message,
+                                  preferredStyle: style)
+    let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .cancel) { _ in
+    }
     alert.addAction(action)
     present(alert, animated: true)
   }

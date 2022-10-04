@@ -10,21 +10,51 @@ import UIKit
 /// Sign up to service screen.
 final class SignUpViewController: UIViewController {
   
-  @IBOutlet weak var nameServiceLabel: UILabel! {
-    willSet {
-      guard var text = nameServiceLabel.text else { return }
-      return text = (service ?? "") + (priceForService ?? "")
-    }
+  // MARK: - Enums.
+  enum LocaleID {
+    static let rus = "rus"
   }
-  @IBOutlet weak var timeLabel: UILabel!
   
-  var service: String?
-  var priceForService: String?
-
+  enum ConfigurationForAlerts {
+    static let emptyTitle = " "
+    static let signUpMessage = "Вы записались на "
+    static let prepositionIn = " в "
+  }
+  
+  // MARK: - @IBOutlet.
+  @IBOutlet private weak var nameServiceLabel: UILabel!
+  @IBOutlet private weak var signUpPicker: UIDatePicker!
+  
+  // Received data.
+  var orderedService = String()
+  
   // MARK: - Life circle.
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureAddedService()
+  }
   
   // MARK: - Visual Components.
+  private func configureAddedService() {
+    nameServiceLabel.text = orderedService
+  }
+  
+  // MARK: - Private Actions.
+  @IBAction private func signUpAction(_ sender: Any) {
+    let timeFormatter = DateFormatter()
+    let dateFormatter = DateFormatter()
+    timeFormatter.locale = Locale(identifier: LocaleID.rus)
+    dateFormatter.locale = Locale(identifier: LocaleID.rus)
+    dateFormatter.dateStyle = .short
+    timeFormatter.timeStyle = .short
+    
+    let signUpTime = timeFormatter.string(from: signUpPicker.date)
+    let signUpDate = dateFormatter.string(from: signUpPicker.date)
+    signUpAlert(title: ConfigurationForAlerts.emptyTitle,
+                message: ConfigurationForAlerts.signUpMessage +
+                signUpDate +
+                ConfigurationForAlerts.prepositionIn +
+                signUpTime,
+                style: .actionSheet)
+  }
 }

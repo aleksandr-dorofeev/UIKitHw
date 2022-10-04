@@ -26,6 +26,7 @@ extension RegistrationViewController: UITextFieldDelegate {
   }
 }
 
+/// UITextFieldDelegate.
 extension LoginViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     switch textField {

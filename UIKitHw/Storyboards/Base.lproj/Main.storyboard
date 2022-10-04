@@ -179,14 +179,14 @@
                                     <action selector="registrationAction:" destination="irK-fe-aem" eventType="touchUpInside" id="A6E-zC-ya3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" ФИО" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZ7-az-dsb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZ7-az-dsb">
                                 <rect key="frame" x="16" y="375" width="358" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия Имя Отчество..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qpB-1x-iRQ">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия Имя..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qpB-1x-iRQ">
                                 <rect key="frame" x="16" y="404" width="358" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -347,12 +347,55 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4fI-dL-WFq">
+                                <rect key="frame" x="16" y="527" width="358" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Выбранные услуги:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsj-Aw-rVh">
+                                        <rect key="frame" x="8" y="0.0" width="342" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Пока нет услуг..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxJ-j3-6ob">
+                                        <rect key="frame" x="8" y="40" width="350" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfN-W8-xYb">
+                                        <rect key="frame" x="104" y="146" width="150" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.45883226389999998" green="0.66581493619999998" blue="0.45879155399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Выбрать время"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpAction:" destination="lSD-of-X63" eventType="touchUpInside" id="i3x-9q-7c0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pk6-0F-2PP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Услуги" largeTitleDisplayMode="always" id="8yF-Vq-MUd"/>
                     <connections>
+                        <outlet property="addedServiceLabel" destination="VxJ-j3-6ob" id="kNn-qw-wCq"/>
                         <outlet property="complexButton" destination="pwb-VY-IlO" id="tFp-Qb-t37"/>
                         <outlet property="complexLabel" destination="xfc-yW-2S3" id="wYJ-7K-XIf"/>
                         <outlet property="complexView" destination="VIX-dR-StG" id="O3z-L6-gXx"/>
@@ -369,18 +412,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AI-gu-Ucy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4612.3076923076924" y="-203.31753554502367"/>
+            <point key="canvasLocation" x="3693.8461538461538" y="307.81990521327015"/>
         </scene>
         <!--Запись-->
         <scene sceneID="lgg-0M-3rQ">
             <objects>
-                <viewController title="Запись" id="uEP-Up-rf6" customClass="SignUpViewController" customModule="UIKitHw" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpID" title="Запись" id="uEP-Up-rf6" customClass="SignUpViewController" customModule="UIKitHw" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Xy-7e-JYM">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="pqL-gS-VgD">
-                                <rect key="frame" x="16" y="143" width="358" height="310"/>
+                                <rect key="frame" x="15" y="143" width="358" height="310"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="662713200">
                                     <!--2022-01-01 07:00:00 +0000-->
@@ -404,18 +447,14 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpAction:" destination="uEP-Up-rf6" eventType="touchUpInside" id="OeL-1g-0mo"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Услуга" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-rJ-2IZ">
-                                <rect key="frame" x="16" y="536" width="196" height="95"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Услуга" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-rJ-2IZ">
+                                <rect key="frame" x="16" y="536" width="357" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Время" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0i-dd-TmY">
-                                <rect key="frame" x="220" y="536" width="154" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -426,36 +465,18 @@
                     <navigationItem key="navigationItem" title="Запись" id="wiv-Z5-eFZ"/>
                     <connections>
                         <outlet property="nameServiceLabel" destination="YCz-rJ-2IZ" id="25q-H4-Qnx"/>
-                        <outlet property="timeLabel" destination="T0i-dd-TmY" id="Jdd-FX-rIF"/>
+                        <outlet property="signUpPicker" destination="pqL-gS-VgD" id="DWg-fJ-aYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJk-s6-WB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4612.3076923076924" y="454.9763033175355"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="K4x-E3-QpA">
-            <objects>
-                <tabBarController storyboardIdentifier="tabBarId" automaticallyAdjustsScrollViewInsets="NO" id="OUf-G4-Tec" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="wqB-MI-nV9"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SnK-LC-Kit">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Ug4-Hv-h0B" kind="relationship" relationship="viewControllers" id="Wx3-5O-fcP"/>
-                        <segue destination="vHR-4w-lCl" kind="relationship" relationship="viewControllers" id="rp3-c1-sFk"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9LE-VA-VB3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2686.1538461538462" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="4636.9230769230771" y="307.81990521327015"/>
         </scene>
         <!--Услуги-->
         <scene sceneID="PSg-jJ-E5f">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ug4-Hv-h0B" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0k0-kX-ML6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="navigationID" automaticallyAdjustsScrollViewInsets="NO" id="Ug4-Hv-h0B" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Услуги" id="IB5-cS-Kfd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="NWs-94-Xji">
@@ -467,28 +488,8 @@
                         <segue destination="lSD-of-X63" kind="relationship" relationship="rootViewController" id="c3B-Sy-zSP"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0k0-kX-ML6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3683.0769230769229" y="-203.31753554502367"/>
-        </scene>
-        <!--Запись-->
-        <scene sceneID="bUf-6i-gr5">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vHR-4w-lCl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Запись" id="puE-TI-Hsc"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="MoT-HZ-HpQ">
-                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uEP-Up-rf6" kind="relationship" relationship="rootViewController" id="Unz-qf-IDO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cdR-yu-jgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3683.0769230769229" y="454.9763033175355"/>
+            <point key="canvasLocation" x="2797" y="308"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nHg-Gp-AiN">
