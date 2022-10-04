@@ -29,6 +29,9 @@ final class BookViewController: UIViewController {
     static let defaultSizeFont: CGFloat = 20
     static let defaultIndex = 0
     static let imageForButton = "wrench.and.screwdriver.fill"
+    static let titleForButtons = "T"
+    static let styleText = ["a", "A"]
+
   }
   
   enum Fonts {
@@ -154,8 +157,7 @@ final class BookViewController: UIViewController {
   }
   
   private func createFontStyleSegmentControl() {
-    let styleText = ["R", "B"]
-    fontStyleSegmentControl = UISegmentedControl(items: styleText)
+    fontStyleSegmentControl = UISegmentedControl(items: Constants.styleText)
     fontStyleSegmentControl.frame = CGRect(x: 330, y: 5, width: 55, height: 30)
     fontStyleSegmentControl.selectedSegmentIndex = 0
     fontStyleSegmentControl.addTarget(self, action: #selector(changeFontStyleAction), for: .valueChanged)
@@ -186,7 +188,7 @@ final class BookViewController: UIViewController {
     for colorButton in buttons {
       colorButton.frame = CGRect(x: startFrameX, y: 75, width: 40, height: 40)
       startFrameX += 40
-      colorButton.setTitle("T", for: .normal)
+      colorButton.setTitle(Constants.titleForButtons, for: .normal)
       colorButton.layer.cornerRadius = 10
       colorButton.addTarget(self, action: #selector(changeColorTextAction), for: .touchUpInside)
       settingsView.addSubview(colorButton)
