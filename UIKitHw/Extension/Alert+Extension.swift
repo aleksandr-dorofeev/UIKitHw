@@ -55,8 +55,7 @@ extension UIViewController {
     let alert = UIAlertController(title: title,
                                   message: message,
                                   preferredStyle: style)
-    let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .cancel) { _ in
-    }
+    let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .cancel)
     alert.addAction(action)
     present(alert, animated: true)
   }

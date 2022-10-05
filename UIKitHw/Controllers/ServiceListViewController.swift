@@ -34,7 +34,7 @@ final class ServiceListViewController: UIViewController {
   @IBOutlet private weak var cutButton: UIButton!
   @IBOutlet private weak var addedServiceLabel: UILabel!
   
-  // MARK: - Life circle.
+  // MARK: - Life cycle.
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -47,7 +47,7 @@ final class ServiceListViewController: UIViewController {
       let manCutService = manCutLabel.text,
       let manCutPrice = priceManCutLabel.text
     else { return }
-    totalServiceOrder += manCutService + Constans.priceLabel + manCutPrice + Constans.nextString
+    totalServiceOrder += "\(manCutService) \(Constans.priceLabel) \(manCutPrice) \(Constans.nextString)"
     addedServiceLabel.text = totalServiceOrder
   }
   

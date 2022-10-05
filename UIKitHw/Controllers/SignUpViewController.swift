@@ -28,7 +28,7 @@ final class SignUpViewController: UIViewController {
   @IBOutlet private weak var nameServiceLabel: UILabel!
   @IBOutlet private weak var signUpPicker: UIDatePicker!
   
-  // MARK: - Life circle.
+  // MARK: - Life cycle.
   override func viewDidLoad() {
     super.viewDidLoad()
     configureAddedService()

@@ -22,12 +22,12 @@ final class LoginViewController: UIViewController {
     static let mail = "mail"
   }
     
-  // MARK: - Private IOBOutlets.
+  // MARK: - Public IBOutlets.
   @IBOutlet weak var phoneOrMailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
   // MARK: - Private properties.
-  private var acceptedLogin = false
+  private var isAcceptedLogin = false
   
   // MARK: - Life circle.
   override func viewDidLoad() {
@@ -57,23 +57,29 @@ final class LoginViewController: UIViewController {
       let login = phoneOrMailTextField.text,
       let password = passwordTextField.text
     else { return }
-    if acceptedLogin && Verify.enterVerify(phoneEmail: login, password: password) {
-      forwardFullScreen()
-    } else {
+    guard
+      isAcceptedLogin,
+      Verify.enterVerify(phoneEmail: login, password: password)
+     else {
       errorAlert(title: ConfigurationForAlerts.emptyTitle, message: ConfigurationForAlerts.noAccessLogin, style: .alert)
+      return
     }
+  forwardFullScreen()
   }
   
   private func forwardFullScreen() {
     successAlert(title: ConfigurationForAlerts.emptyTitle,
-                 message: ConfigurationForAlerts.comebackMessage + (phoneOrMailTextField.text ?? ""),
+                 message: "\(ConfigurationForAlerts.comebackMessage) \(phoneOrMailTextField.text ?? "")",
                  style: .alert)
   }
   
   @IBAction func verifyLoginAction(_ sender: UITextField) {
-    guard let mail = phoneOrMailTextField.text else { return }
-    if UserSettings.shared.checkMail(forKey: UserDefaultsKeys.mail) == mail {
-      acceptedLogin = true
+    guard
+      let mail = phoneOrMailTextField.text,
+      UserSettings.shared.checkMail(forKey: UserDefaultsKeys.mail) == mail
+    else {
+      return
     }
+      isAcceptedLogin = true
   }
 }

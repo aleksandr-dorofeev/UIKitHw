@@ -32,11 +32,11 @@ final class RegistrationViewController: UIViewController {
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var fullNameTextField: UITextField!
   
-  // MARK: - Private IOutlets.
+  // MARK: - Private IBOutlets.
   @IBOutlet private weak var agreementSwitch: UISwitch!
   @IBOutlet private weak var registrationButton: UIButton!
   
-  // MARK: - Life circle.
+  // MARK: - Life cycle.
   override func viewDidLoad() {
     super.viewDidLoad()
     createNotificationForKeyboard()
@@ -114,23 +114,30 @@ final class RegistrationViewController: UIViewController {
     else {
       return
     }
-    
+    verifyIfTextEmpty(phone: phoneText, mail: emailText, password: passwordText, name: nameText)
+    verifyRegistration(phone: phoneText, mail: emailText, password: passwordText, name: nameText)
+  }
+  
+  private func verifyIfTextEmpty(phone: String, mail: String, password: String, name: String) {
     guard
-      !phoneText.isEmpty,
-      !emailText.isEmpty,
-      !passwordText.isEmpty,
-      !nameText.isEmpty
+      !phone.isEmpty,
+      !mail.isEmpty,
+      !password.isEmpty,
+      !name.isEmpty
     else {
       errorAlert(title: Constants.emptyTitle,
                  message: Constants.emptyDataMessage,
                  style: .alert)
       return
     }
+  }
+  
+  private func verifyRegistration(phone: String, mail: String, password: String, name: String) {
     guard
-      Verify.registrationVerify(phone: phoneTextField.text,
-                              password: passwordTextField.text,
-                              email: emailTextField.text,
-                              name: fullNameTextField.text)
+      Verify.registrationVerify(phone: phone,
+                              password: password,
+                              email: mail,
+                              name: name)
     else {
       errorAlert(title: Constants.wrongDataTitle,
                  message: Constants.wrongDataMessage,
