@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F871D9CB28EDB63E009BD03A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D9CA28EDB63D009BD03A /* TimerViewController.swift */; };
 		F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E428DC7234008BFEBC /* AppDelegate.swift */; };
 		F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */; };
 		F8BE19E928DC7234008BFEBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE19E828DC7234008BFEBC /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F871D9CA28EDB63D009BD03A /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		F8BE19E128DC7234008BFEBC /* UIKitHw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE19E428DC7234008BFEBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F871D9C928EDA1A8009BD03A /* ReplayLesson */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE19E828DC7234008BFEBC /* ViewController.swift */,
+			);
+			path = ReplayLesson;
+			sourceTree = "<group>";
+		};
+		F871D9CC28EDB644009BD03A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F871D9CA28EDB63D009BD03A /* TimerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F871D9CD28EDB64D009BD03A /* Stroryboard */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE19EA28DC7234008BFEBC /* Main.storyboard */,
+			);
+			path = Stroryboard;
+			sourceTree = "<group>";
+		};
 		F8BE19D828DC7234008BFEBC = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +82,11 @@
 		F8BE19E328DC7234008BFEBC /* UIKitHw */ = {
 			isa = PBXGroup;
 			children = (
+				F871D9C928EDA1A8009BD03A /* ReplayLesson */,
 				F8BE19E428DC7234008BFEBC /* AppDelegate.swift */,
 				F8BE19E628DC7234008BFEBC /* SceneDelegate.swift */,
-				F8BE19E828DC7234008BFEBC /* ViewController.swift */,
-				F8BE19EA28DC7234008BFEBC /* Main.storyboard */,
+				F871D9CC28EDB644009BD03A /* Controllers */,
+				F871D9CD28EDB64D009BD03A /* Stroryboard */,
 				F8BE19ED28DC7236008BFEBC /* Assets.xcassets */,
 				F8BE19EF28DC7236008BFEBC /* LaunchScreen.storyboard */,
 				F8BE19F228DC7236008BFEBC /* Info.plist */,
@@ -161,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F871D9CB28EDB63E009BD03A /* TimerViewController.swift in Sources */,
 				F8BE19E928DC7234008BFEBC /* ViewController.swift in Sources */,
 				F8BE19E528DC7234008BFEBC /* AppDelegate.swift in Sources */,
 				F8BE19E728DC7234008BFEBC /* SceneDelegate.swift in Sources */,
