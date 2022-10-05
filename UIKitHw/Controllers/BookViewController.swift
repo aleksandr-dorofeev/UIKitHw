@@ -28,7 +28,6 @@ final class BookViewController: UIViewController {
     static let didotBoldFont = "Didot-Bold"
     static let defaultSizeFont: CGFloat = 20
     static let defaultIndex = 0
-    static let imageForButton = "wrench.and.screwdriver.fill"
     static let titleForButtons = "T"
     static let styleText = ["a", "A"]
 
@@ -68,7 +67,6 @@ final class BookViewController: UIViewController {
   
   // MARK: - Private properties.
   private let bookTextView = UITextView()
-  private let settingsButton = UIButton()
   private let settingsView = UIView()
   private let fontSizeSlider = UISlider()
   private let fontPickerView = UIPickerView()
@@ -108,7 +106,6 @@ final class BookViewController: UIViewController {
   // MARK: - Private visual components.
   private func setupSubview() {
     createTextView()
-    createSettingsButton()
     createSettingsView()
     createFontSizeSlider()
     createFontStyleSegmentControl()
@@ -128,21 +125,10 @@ final class BookViewController: UIViewController {
     view.addSubview(bookTextView)
   }
   
-  private func createSettingsButton() {
-    settingsButton.frame = CGRect(x: 340, y: 50, width: 50, height: 30)
-    settingsButton.backgroundColor = UIColor(cgColor: CGColor(red: 0.5, green: 0.3, blue: 0.4, alpha: 0.6))
-    settingsButton.tintColor = .white
-    settingsButton.layer.cornerRadius = 10
-    settingsButton.setImage(UIImage(systemName: Constants.imageForButton), for: .normal)
-    view.addSubview(settingsButton)
-    settingsButton.addTarget(self, action: #selector(openSettingsViewAction), for: .touchUpInside)
-  }
-  
   private func createSettingsView() {
     settingsView.frame = CGRect(x: 0, y: 700, width: view.bounds.width, height: 150)
     settingsView.backgroundColor = .white
     settingsView.alpha = 0.9
-    settingsView.isHidden = true
     view.addSubview(settingsView)
   }
   
@@ -196,16 +182,6 @@ final class BookViewController: UIViewController {
   }
   
   // MARK: - Private actions.
-  @objc private func openSettingsViewAction() {
-    if settingsView.isHidden {
-      settingsView.isHidden = false
-      settingsButton.frame = CGRect(x: 336, y: 45, width: 50, height: 100)
-    } else {
-      settingsView.isHidden = true
-      settingsButton.frame = CGRect(x: 336, y: 45, width: 50, height: 30)
-    }
-  }
-  
   @objc private func nightModeAction() {
     guard nightModeSwitch.isOn else {
       bookTextView.backgroundColor = .white
