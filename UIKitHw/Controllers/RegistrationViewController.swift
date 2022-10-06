@@ -75,9 +75,10 @@ final class RegistrationViewController: UIViewController {
   }
   
   private func forwardFullScreen() {
-    successAlert(title: Constants.successAlertTitle,
+    alert(title: Constants.successAlertTitle,
                  message: Constants.welcomeMessage + (fullNameTextField.text ?? Constants.emptyTitle),
-                 style: .alert)
+                 style: .alert,
+                 type: TypeOfAlert.success)
     saveUserInUserDefaults()
   }
   
@@ -97,7 +98,10 @@ final class RegistrationViewController: UIViewController {
   // если можно докрутить, то напишите как, пожалуйста.
   private func verifyRegistration(user: User) {
     if UserSettings.shared.users.firstIndex(of: user) != nil {
-      errorAlert(title: Constants.emptyTitle, message: Constants.alreadyRegistered, style: .alert)
+      alert(title: Constants.emptyTitle,
+            message: Constants.alreadyRegistered,
+            style: .alert,
+            type: TypeOfAlert.defaults)
     } else {
       UserSettings.shared.users.append(user)
       UserDefaults.standard.set(
@@ -125,9 +129,10 @@ final class RegistrationViewController: UIViewController {
       !password.isEmpty,
       !name.isEmpty
     else {
-      errorAlert(title: Constants.emptyTitle,
+      alert(title: Constants.emptyTitle,
                  message: Constants.emptyDataMessage,
-                 style: .alert)
+                 style: .alert,
+                 type: TypeOfAlert.defaults)
       return
     }
   }
@@ -139,9 +144,10 @@ final class RegistrationViewController: UIViewController {
                               email: mail,
                               name: name)
     else {
-      errorAlert(title: Constants.wrongDataTitle,
+      alert(title: Constants.wrongDataTitle,
                  message: Constants.wrongDataMessage,
-                 style: .alert)
+                 style: .alert,
+                 type: TypeOfAlert.defaults)
       return
     }
   }

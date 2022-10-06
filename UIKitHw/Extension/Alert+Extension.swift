@@ -11,6 +11,11 @@ import UIKit
 extension UIViewController {
   
   // MARK: - Public Enums.
+  enum TypeOfAlert {
+    case defaults
+    case success
+  }
+  
   enum StoryboardsIDs {
     static let main = "Main"
     static let navigationId = "navigationID"
@@ -23,40 +28,28 @@ extension UIViewController {
   }
   
   // MARK: - Public methods.
-  func errorAlert(title: String, message: String, style: UIAlertController.Style) {
+  func alert(title: String, message: String, style: UIAlertController.Style, type: TypeOfAlert) {
     let alert = UIAlertController(title: title,
                                   message: message,
                                   preferredStyle: style)
-    let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .default)
-    alert.addAction(action)
-    present(alert, animated: true)
-  }
-  
-  func successAlert(title: String, message: String, style: UIAlertController.Style) {
-    let alert = UIAlertController(title: title,
-                                  message: message,
-                                  preferredStyle: style)
-    let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .cancel) { _ in
-      let storyboard = UIStoryboard(name: StoryboardsIDs.main, bundle: nil)
-      guard
-        let serviceScreen = storyboard.instantiateViewController(
-          withIdentifier: StoryboardsIDs.navigationId) as? UINavigationController
-      else {
-        return
+    if type == TypeOfAlert.defaults {
+      let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .default)
+      alert.addAction(action)
+      present(alert, animated: true)
+    } else if type == TypeOfAlert.success {
+      let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .cancel) { _ in
+        let storyboard = UIStoryboard(name: StoryboardsIDs.main, bundle: nil)
+        guard
+          let serviceScreen = storyboard.instantiateViewController(
+            withIdentifier: StoryboardsIDs.navigationId) as? UINavigationController
+        else {
+          return
+        }
+        serviceScreen.modalPresentationStyle = .fullScreen
+        self.present(serviceScreen, animated: true)
       }
-      serviceScreen.modalPresentationStyle = .fullScreen
-      self.present(serviceScreen, animated: true)
+      alert.addAction(action)
+      present(alert, animated: true)
     }
-    alert.addAction(action)
-    present(alert, animated: true)
-  }
-  
-  func signUpAlert(title: String, message: String, style: UIAlertController.Style) {
-    let alert = UIAlertController(title: title,
-                                  message: message,
-                                  preferredStyle: style)
-    let action = UIAlertAction(title: ConfigurationForAlerts.okButton, style: .cancel)
-    alert.addAction(action)
-    present(alert, animated: true)
   }
 }

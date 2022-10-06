@@ -50,11 +50,12 @@ final class SignUpViewController: UIViewController {
     
     let signUpTime = timeFormatter.string(from: signUpPicker.date)
     let signUpDate = dateFormatter.string(from: signUpPicker.date)
-    signUpAlert(title: ConfigurationForAlerts.emptyTitle,
+    alert(title: ConfigurationForAlerts.emptyTitle,
                 message: ConfigurationForAlerts.signUpMessage +
                 signUpDate +
                 ConfigurationForAlerts.prepositionIn +
                 signUpTime,
-                style: .actionSheet)
+                style: .actionSheet,
+                type: TypeOfAlert.defaults)
   }
 }

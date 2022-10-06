@@ -21,7 +21,7 @@ final class LoginViewController: UIViewController {
   private enum UserDefaultsKeys {
     static let mail = "mail"
   }
-    
+  
   // MARK: - Public IBOutlets.
   @IBOutlet weak var phoneOrMailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
@@ -60,17 +60,21 @@ final class LoginViewController: UIViewController {
     guard
       isAcceptedLogin,
       Verify.enterVerify(phoneEmail: login, password: password)
-     else {
-      errorAlert(title: ConfigurationForAlerts.emptyTitle, message: ConfigurationForAlerts.noAccessLogin, style: .alert)
+    else {
+      alert(title: ConfigurationForAlerts.emptyTitle,
+            message: ConfigurationForAlerts.noAccessLogin,
+            style: .alert,
+            type: TypeOfAlert.defaults)
       return
     }
-  forwardFullScreen()
+    forwardFullScreen()
   }
   
   private func forwardFullScreen() {
-    successAlert(title: ConfigurationForAlerts.emptyTitle,
-                 message: "\(ConfigurationForAlerts.comebackMessage) \(phoneOrMailTextField.text ?? "")",
-                 style: .alert)
+    alert(title: ConfigurationForAlerts.emptyTitle,
+          message: "\(ConfigurationForAlerts.comebackMessage) \(phoneOrMailTextField.text ?? "")",
+          style: .alert,
+          type: TypeOfAlert.success)
   }
   
   @IBAction func verifyLoginAction(_ sender: UITextField) {
@@ -80,6 +84,6 @@ final class LoginViewController: UIViewController {
     else {
       return
     }
-      isAcceptedLogin = true
+    isAcceptedLogin = true
   }
 }
