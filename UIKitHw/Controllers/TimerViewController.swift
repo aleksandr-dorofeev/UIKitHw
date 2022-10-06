@@ -19,6 +19,7 @@ class TimerViewController: UIViewController {
     static let stopTitle = "Стоп"
     static let startTitle = "Старт"
     static let startPositionLabel = "0:00:00"
+    static let zero = "0"
   }
 
   // MARK: - Private IBOutlet.
@@ -69,6 +70,6 @@ class TimerViewController: UIViewController {
   }
   
   private func addZeroBeforeAction(_ value: Int) -> String {
-    value < 10 ? "0\(value)" : "\(value)"
+    value < 10 ? "\(Constants.zero)\(value)" : "\(value)"
   }
 }
