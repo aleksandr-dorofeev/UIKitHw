@@ -10,8 +10,7 @@ import UIKit
 /// UIPickerViewDataSource.
 extension BookViewController: UIPickerViewDataSource {
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    let numberOfComponents = 1
-    return numberOfComponents
+    return 1
   }
   
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

@@ -30,7 +30,6 @@ final class BookViewController: UIViewController {
     static let defaultIndex = 0
     static let titleForButtons = "T"
     static let styleText = ["a", "A"]
-
   }
   
   enum Fonts {
@@ -63,7 +62,6 @@ final class BookViewController: UIViewController {
   // MARK: - Public properties.
   var currentFont = Constants.arialHebrewFont
   var selectedSegment = Constants.defaultIndex
-  var bookText = Book()
   
   // MARK: - Private properties.
   private let bookTextView = UITextView()
@@ -116,7 +114,7 @@ final class BookViewController: UIViewController {
   
   private func createTextView() {
     bookTextView.frame = CGRect(x: 0, y: 50, width: view.bounds.width, height: view.bounds.height - 70)
-    bookTextView.text = bookText.text
+    bookTextView.text = Book.text
     bookTextView.contentInset = UIEdgeInsets(top: 50, left: 10, bottom: 50, right: 10)
     bookTextView.isEditable = false
     bookTextView.textAlignment = .justified
