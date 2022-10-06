@@ -22,7 +22,7 @@ extension BookViewController: UIPickerViewDelegate {
     for font in Fonts.fonts {
       keys.append(font.key)
     }
-    let fonts = [Constants.arialHebrewFont, Constants.gothicNeoFont, Constants.courierFont, Constants.typewriterFont, Constants.helveticaNeueFont]
+    let fonts = [Constants.arialHebrewFont, Constants.gothicNeoFont, Constants.courierFont, Constants.typewriterFont, Constants.helveticaNeueFont, Constants.didotFont]
     switch keys[row] {
     case let fontName where fontName == Constants.arialHebrewFont:
       changeFontAndSizeAction(name: fontName, isBold: false)
@@ -42,5 +42,3 @@ extension BookViewController: UIPickerViewDelegate {
     currentFont = keys[row]
   }
 }
-
-//      let fonts = [Constants.arialHebrewFont, Constants.gothicNeoFont, Constants.courierFont, Constants.typewriterFont, Constants.helveticaNeueFont, Constants.didotFont]
