@@ -21,7 +21,7 @@ final class TimerViewController: UIViewController {
     static let startPositionTitle = "0:00:00"
     static let zero = "0"
   }
-
+  
   // MARK: - Private IBOutlet.
   @IBOutlet private weak var stopwatchLabel: UILabel!
   @IBOutlet private weak var resetButton: UIButton!
