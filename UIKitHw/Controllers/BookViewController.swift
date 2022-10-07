@@ -89,11 +89,7 @@ final class BookViewController: UIViewController {
     else {
       return
     }
-    if isBold {
-      bookTextView.font = secondFont
-    } else {
-      bookTextView.font = firstFont
-    }
+    bookTextView.font = isBold ? secondFont : firstFont
     
     if selectedSegment == 1 {
       bookTextView.font = secondFont
