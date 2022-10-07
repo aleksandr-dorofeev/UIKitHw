@@ -8,7 +8,7 @@
 import UIKit
 
 /// Timer screen.
-class TimerViewController: UIViewController {
+final class TimerViewController: UIViewController {
   
   // MARK: - Private enum.
   private enum Constants {
@@ -18,7 +18,7 @@ class TimerViewController: UIViewController {
     static let customGreenColor = UIColor(red: 0.486, green: 0.666, blue: 0.459, alpha: 1)
     static let stopTitle = "Стоп"
     static let startTitle = "Старт"
-    static let startPositionLabel = "0:00:00"
+    static let startPositionTitle = "0:00:00"
     static let zero = "0"
   }
 
@@ -54,7 +54,7 @@ class TimerViewController: UIViewController {
   
   @IBAction func resetAction(_ sender: UIButton) {
     timerCounter = 0.00
-    stopwatchLabel.text = Constants.startPositionLabel
+    stopwatchLabel.text = Constants.startPositionTitle
   }
   
   @objc private func runTimerAction() {

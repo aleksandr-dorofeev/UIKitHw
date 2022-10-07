@@ -8,21 +8,17 @@
 import UIKit
 
 /// Replay lesson.
-final class ViewController: UIViewController {
-
+final class HomeworkViewController: UIViewController {
+  
   // MARK: - Private properties.
-//  @IBOutlet private var buttons: [UIButton]!
   private var myButton = UIButton()
   private let normalImage = UIImage(named: "1")
   private let highlightedImage = UIImage(named: "2")
   
-  // MARK: - Life circle.
+  // MARK: - Life cycle.
   override func viewDidLoad() {
     super.viewDidLoad()
     createButton()
-//    for button in buttons {
-//      button.setTitleColor(UIColor.green, for: .normal)
-//    }
   }
   
   // MARK: - Private visual components.
@@ -46,13 +42,4 @@ final class ViewController: UIViewController {
   @objc private func buttonIsTappedAction(sender: UIButton) {
     print("Button is tapped")
   }
-
-//  @IBAction private func buttonsAction(_ sender: UIButton) {
-//    guard let button = sender as? UIButton else { return }
-//    if button.titleLabel?.text == "Button1" {
-//      print("Это первая кнопка")
-//    } else if button.tag == 3 {
-//      print("Это третья кнопка")
-//    }
-//  }
 }
