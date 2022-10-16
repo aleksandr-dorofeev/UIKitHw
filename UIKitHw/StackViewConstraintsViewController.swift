@@ -16,19 +16,19 @@ final class StackViewConstraintsViewController: UIViewController {
   }
   
   // MARK: - Private visual components.
-  private lazy var redView: UIView = {
+  private let redView: UIView = {
     let view = UIView()
     view.backgroundColor = .systemRed
     return view
   }()
   
-  private lazy var yellowView: UIView = {
+  private let yellowView: UIView = {
     let view = UIView()
     view.backgroundColor = .systemYellow
     return view
   }()
   
-  private lazy var greenView: UIView = {
+  private let greenView: UIView = {
     let view = UIView()
     view.backgroundColor = .systemGreen
     return view
